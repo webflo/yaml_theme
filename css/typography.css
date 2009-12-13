@@ -1,0 +1,167 @@
+/* -------------------------------------------------------------- 
+   typography.css
+   * Sets up some sensible default typography.
+   
+-------------------------------------------------------------- */
+/* Headings
+-------------------------------------------------------------- */
+
+h1,h2,h3,h4,h5,h6 { 
+	font-weight: normal; 
+	color: #666; 
+	margin-top: 10px;
+}
+
+
+
+h1 { font-size: 21px; line-height: 1; margin-bottom: 0.5em; }
+h2 { font-size: 18px;; margin-bottom: 0.75em; }
+h3 { font-size: 15px;; line-height: 1; margin-bottom: 1em;  color:#0D85D0;}
+h4 { font-size: 13px;; line-height: 1; font-weight: normal;text-decoration:underline; margin-bottom: 1.25em; }
+h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
+h6 { font-size: 1em; font-weight: bold; }
+
+
+#main-content h3 {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+	
+#main-content p {		
+	padding-bottom: 10px;
+}
+h1 img, h2 img, h3 img, 
+h4 img, h5 img, h6 img {
+  margin: 0;
+}
+
+
+/* Text elements
+-------------------------------------------------------------- */
+
+p           { margin: 0 0 1.5em; }
+p img.left  { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
+
+a:focus, 
+a:hover     { color: #0d85d0; }
+a { 
+	color: #666; 
+	text-decoration: none; 
+	outline: none;
+}
+
+#main-content a {
+		font-weight:bolder;
+		color:#0D85D0;
+}
+
+.text-content a {
+    padding-right:13px;
+    background-image:url(images/small/link_tiny.png);
+    background-position:right center;
+    background-repeat:no-repeat;
+}
+
+#main-content a:hover {
+		font-weight:bolder;
+		color:black;
+}
+
+blockquote > :first-child {
+  background: url('images/open-quote.gif') no-repeat left top;    /* LTR */
+  padding: 10px 0 0 20px;    /* LTR */
+}
+
+blockquote * > :first-child {
+  background:none;
+  padding: 0px 0 0 0px; 
+}
+
+blockquote  { 
+	margin:0px 0px 0px 8px;
+	font-style: italic; 
+	background: url('images/close-quote.gif') no-repeat right bottom;    /* LTR */
+
+}
+
+blockquote  { 
+	-moz-border-radius:7px;
+	background-color: #E0EEEF;	
+}
+
+blockquote a:link {
+  text-decoration: underline;
+}
+
+strong      { font-weight: bold; }
+em,dfn      { font-style: italic; }
+dfn         { font-weight: bold; }
+sup, sub    { line-height: 0; }
+
+abbr, 
+acronym     { border-bottom: 1px dotted #666; }
+address     { margin: 0 0 1.5em; font-style: italic; }
+del         { color:#666; }
+
+pre 				{ margin: 1.5em 0; white-space: pre; }
+pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; }
+
+
+/* Lists
+-------------------------------------------------------------- */
+
+li ul, 
+li ol       { margin:0 1.5em; padding:0px 0px 0px 20px;}
+ul, ol      { margin: 0 1.5em 1.5em 1.5em; padding:0px 0px 0px 20px;}
+
+ul ul, ol ol      { margin: 0 1.5em 0em 1.5em; padding:0px 0px 0px 20px;}
+ul          { list-style-type: disc; }
+ol          { list-style-type: decimal; }
+
+dl          { margin: 0 0 1.5em 0; }
+dl dt       { font-weight: bold; }
+dd          { margin-left: 1.5em;}
+
+#content-content li p {
+	margin:0px;
+	padding:0px;
+}
+/* Tables
+-------------------------------------------------------------- */
+
+table       { margin-bottom: 1.4em; width:100%; }
+th          { font-weight: bold; }
+thead th 		{ background: #c3d9ff; }
+th,td,caption { padding: 4px 10px 4px 5px; }
+tr.even td  { background: #e5ecf9; }
+tfoot       { font-style: italic; }
+caption     { background: #eee; }
+
+
+/* Misc classes
+-------------------------------------------------------------- */
+
+.small      { font-size: .8em; margin-bottom: 1.875em; line-height: 1.875em; }
+.large      { font-size: 1.2em; line-height: 2.5em; margin-bottom: 1.25em; }
+.hide       { display: none; }
+
+.quiet      { color: #666; }
+.loud       { color: #000; }
+.highlight  { background:#ff0; }
+.added      { background:#060; color: #fff; }
+.removed    { background:#900; color: #fff; }
+
+.first      { margin-left:0; padding-left:0; }
+.last       { margin-right:0; padding-right:0; }
+.top        { margin-top:0; padding-top:0; }
+.bottom     { margin-bottom:0; padding-bottom:0; }
+
+span.changedon {
+    font-size:90%;
+    color:grey;
+}
+
+h2.pagetitle {
+	margin: 5px 0px 2px 0px;	
+}

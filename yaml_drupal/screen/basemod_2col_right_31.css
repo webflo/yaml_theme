@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@media screen, projection
+{
+/* * |-------------------------------|
+   * | #header                       |
+   * |-------------------------------|
+   * | #col3   | #col1               |
+   * | flexible| 25%                 |
+   * |-------------------------------|
+   * | #footer                       |
+   * |-------------------------------|
+   */
+  #col1 { width: 25%; float:right; }
+  #col3 { margin-left: 0%; margin-right: 25%; }
+}

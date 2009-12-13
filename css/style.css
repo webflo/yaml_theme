@@ -1,0 +1,415 @@
+/* ------------------------ Drupal overrides ---------------------- */
+.links_footer {
+	padding-bottom: 10px;
+}
+
+.date {
+	font-size: 10px;
+	color: #888;
+}
+
+
+ul.primary li.active a, ul.primary li a {
+	background-color: #eee;
+	border-color:#ccc;
+	color: #666;
+	font-weight: bold;
+	font-size: 11px;
+	padding: 5px 25px;
+	height: 30px;
+}
+
+ul.primary li.active a {
+	background: #fff;
+	border-color:#ccc;
+	color: #555;
+}
+
+ul.primary {
+	padding:0 0 5px 1em;
+	margin: 5px 0;
+}
+
+ul.primary li a:hover {
+	background-color:#ffffff;
+}
+
+/* left navigation */
+
+.menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li.collapsed {
+	clear: both;
+}
+ul.menu {
+	padding-bottom: 5px;
+	padding: 50px;
+}
+
+ul.menu li {
+	background: url(images/h2_bottom_border.gif) repeat-x bottom;
+	list-style: none;	
+}
+
+ul.menu li.active-trail {
+	background: url(images/h2_bottom_border.gif) repeat-x bottom;
+}
+
+ul.menu li.active-trail a{
+	background: url(images/menu_expanded.png) no-repeat 5px 12px;
+}
+ul.menu li.active-trail li a{
+	background: url(images/menu_leaf.png) no-repeat 20px 12px;
+}
+
+ul.menu li.active-trail li.active-trail a{
+	background: url(images/menu_expanded.png) no-repeat 20px 12px;
+}
+
+ul.menu li.active-trail li.active-trail li a {
+	background: url(images/menu_leaf.png) no-repeat 40px 12px;
+}
+
+ul.menu li.active-trail li.active-trail li.active-trail a{
+	background: url(images/menu_expanded.png) no-repeat 40px 12px;
+}
+
+ul.menu li.active-trail li.active-trail li.active-trail li a {
+	background: url(images/menu_leaf.png) no-repeat 60px 12px;
+}
+
+ul.menu li.active-trail li.active-trail li.active-trail li.active-trail a{
+	background: url(images/menu_expanded.png) no-repeat 60px 12px;
+}
+
+ul.menu li.active-trail li.active-trail li.active-trail li.active-trail li a {
+	background: url(images/menu_leaf.png) no-repeat 80px 12px;
+}
+
+
+ul.menu li.active-trail li.last a{
+	background: url(images/menu_expanded.png) no-repeat 20px 12px;
+}
+
+ul.menu li {
+	margin: 0; 
+	padding: 0;
+	list-style: none;
+	padding-bottom: 2px;
+}
+
+li a.active {
+	color:555;
+}
+ul.secondary a.active {
+	border-bottom:1px solid #999999;
+}
+
+.menu li a{
+	display: block;
+	padding-left: 0px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 20px;
+	height: 20px;
+
+	
+	
+}
+
+.menu li a.active {
+	color: #777;
+
+}
+
+ul.menu li li{
+	
+	width: 250px;
+	margin: 0; 
+	list-style: none;
+	
+	
+}
+.menu li li a {
+	padding-left: 35px;
+}
+
+.menu li li li a {
+	padding-left: 55px;
+}
+
+.menu li li li li a {
+	padding-left: 75px;
+}
+.menu li li li li li a {
+	padding-left: 95px;
+}
+
+.menu li ul {
+	padding-left: 0px;	
+}
+
+#footer .menu li a{
+	display: inline;
+	padding: 0 0 0 15px;
+	background: none;
+	font-size: 11px;
+
+}
+
+#footer .menu li {
+	list-style: none;
+	width: auto;
+	float: left;
+	background: none;
+}
+
+#footer .menu li a.active {
+	background: none;
+	font-weight: bold;
+	color: #777;
+}
+
+#footer ul.menu {
+	display: inline;
+	float: right;
+	width: auto;
+	padding: 0;
+	margin: 0;
+}
+.block ul {
+
+	list-style: none;
+}
+ul.menu {
+	list-style: none;
+	text-align:left;
+	margin:0;
+	padding:0;
+}
+
+
+li.expanded, li.collapsed, li.leaf {
+	list-style-image: none;
+}
+
+ul.menu li {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0;
+}
+
+
+/*table styles  */
+
+thead th {
+	background: #ddd none repeat scroll 0 0;
+}
+thead th {
+	border-bottom:1px #bbb solid;
+}
+th {
+	border-bottom: 3px #bbb solid;
+	padding-right: 1em;
+	text-align: left;
+}
+
+td {
+	background: #eee;
+	border-top: 1px #fff solid;	
+	border-bottom:1px #ccc solid;
+	color: #777;
+}
+
+tr.even td {
+	background:#f5f5f5;
+	border-top: 1px #fff solid;	
+	border-bottom:1px #cccc solid;
+}
+
+td.active {
+	background-color: #e4e4e4;
+}
+
+table.system-status-report tr.ok th {
+	background-color:#f5f5f5;
+	border-bottom:1px #cccccc solid;
+}
+
+table.system-status-report tr.even th {
+	background-color: #f5f5f5;
+
+}
+
+table.system-status-report tr.odd th {
+	background-color: #eeeeee;
+	border-bottom:1px #cccccc solid;
+}
+
+
+
+
+/* form style */
+
+
+fieldset {
+	border: 1px #999 solid;
+}
+
+html.js fieldset.collapsed { 
+	border-top: 1px #999 solid;
+}
+
+.resizable-textarea .grippie {
+	border-width: 1px 1px 1px 1px;
+	height: 9px;
+}
+
+/* contact form style */
+form {
+	padding: 0 0;
+	margin: 0;
+}
+
+input,
+textarea{
+	padding: 2px;
+	font: 400 12px arial, sans-serif;
+	background: #fafafa;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #c0c0ba #f4f4ec #f4f4ec #c0c0ba;  
+}
+
+
+
+input.form-submit{
+	padding: 5px 15px;
+	font: bold 1em arial, sans-serif;
+	cursor: pointer;
+	color: #777;
+	background-color: #222;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ccc #aaa #aaa #ccc;
+	background: url(images/gradient.gif) repeat-x;
+}
+
+.marker, .form-required {
+	color:#aaa;
+}
+
+/* override from drupal's user.css */
+
+.profile h3 {
+	border-bottom:1px solid #bbb;
+	padding-bottom: 5px;
+}
+
+
+/*notification override */ 
+
+div.warning, tr.warning {
+	padding:15px;
+}
+
+
+.ok {
+	color: #88caf3;
+	color: #88caf3
+}
+
+div.admin-dependencies, div.admin-required {
+	color:#888;
+	font-size:0.9em;
+}
+
+div.error, tr.error {
+	background:#f2f2f2 none repeat scroll 0 0;
+	color: #777;
+	padding: 10px;
+}
+div.error {
+	border:1px solid #cccccc;
+	background-color:#FFAFAF;
+	-moz-border-radius:3px;
+	margin: 15px 0;
+	
+}
+
+.messages {
+	background:#f2f2f2 none repeat scroll 0 0;
+	padding:10px;
+	margin: 15px 0;
+	border:1px solid #cccccc;
+}
+
+
+/* comments */
+
+.comment {
+	border-bottom: 1px solid #bbb;
+	padding: 7px 7px 7px 7px;
+}
+.comment h3{
+	margin: 0;
+	padding: 0;
+	margin-top: 300px;
+}
+
+.comment .title a {
+	font-size: 1.1em;
+	font-weight: normal;
+}
+
+.comment .new {
+	text-align: right;
+	font-weight: bold;
+	font-size: 0.8em;
+	float: right; 
+	color: #eee;
+}
+
+.comment .picture {
+	border: 1px solid #bbb;
+	float: right;
+	margin: 0.5em;
+}
+
+
+/* poll style */
+
+.vote-form .form-submit {
+	height: 33px;
+	background: url(images/styled_button.png) no-repeat top left;
+		
+	margin-top: 0px;
+	width: 87px;
+	border: none;
+	margin-left: 6px;
+}
+
+.poll .bar {
+	background-color:#cccccc;
+}
+
+.poll .bar .foreground {
+	background-color:#0d85d0;
+}
+
+.poll .title {
+	padding-bottom: 10px;
+}
+
+.poll .text {
+	color: #bbb;
+}
+
+
+dl.multiselect dd.a, dl.multiselect dd.a .form-item {
+	width:15em;
+}	

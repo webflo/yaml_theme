@@ -1,0 +1,17 @@
+.page-center {
+	margin:auto;
+}
+/*.page100,.page95,.page90,.page85,.page80,.page75,.page70,.page65,.page60,.page55 {
+	margin:auto;
+}*/
+
+.page100 { width:100% }
+.page95 { width:95% }
+.page90 { width:90% }
+.page85 { width:85% }
+.page80 { width:80% }
+.page75 { width:75% }
+.page70 { width:70% }
+.page65 { width:65% }
+.page60 { width:60% }
+.page55 { width:55% }

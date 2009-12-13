@@ -1,0 +1,8 @@
+tr.region-populated {
+	display:none;
+}
+
+/* Navigation menu (hor) */
+.hlist .title {
+	display:none;
+}
