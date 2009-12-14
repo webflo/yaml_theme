@@ -44,14 +44,4 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/drupal.css
 stylesheets[all][] = css/typography.css
 
-;yaml
-stylesheets[all][] = yaml/core/base.css
-stylesheets[all][] = yaml/navigation/nav_shinybuttons.css
-stylesheets[all][] = yaml/screen/basemod.css
-stylesheets[all][] = yaml/screen/content.css
-stylesheets[all][] = yaml/print/print_draft.css
-stylesheets[all][] = yaml/screen/forms.css
-
-;yaml_drupal
-stylesheets[all][] = yaml_drupal/screen/basemod_drupal.css
-stylesheets[all][] = yaml_drupal/screen/content_default.css
+stylesheets[all][] = yaml.css
