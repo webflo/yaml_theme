@@ -27,10 +27,6 @@
   * @section content-global-settings
   */
 
-  /* (en) reset font size for all elements to standard (16 Pixel) */
-  /* (de) Alle Schriftgrößen auf Standardgröße (16 Pixel) zurücksetzen */
-  html * { font-size:100.01%; }
-
  /**
   * (en) reset monospaced elements to font size 16px in all browsers
   * (de) Schriftgröße von monospaced Elemente in allen Browsern auf 16 Pixel setzen
@@ -41,12 +37,9 @@
   textarea, pre, code, kbd, samp, var, tt {
     font-family:Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;
   }
-
-  /* (en) base layout gets standard font size 12px */
-  /* (de) Basis-Layout erhält Standardschriftgröße von 12 Pixeln */
-  body {
+ body {
     font-family:Arial, Helvetica, sans-serif;
-    font-size:75.00%;
+    font-size:71.00%;
     color:#444;
   }
 
