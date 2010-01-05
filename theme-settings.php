@@ -22,6 +22,7 @@ function yaml_theme_default_theme_settings() {
     'theme_font'                            => 'none',
     'theme_font_size'                       => 'font-size-13',
     'theme_color'                           => '',
+    'page_bottom'                           => 'Based on the drupal <a href="http://drupal-yaml-theme.com" targe="_blanc">yaml_theme</a> and the yaml-CSS-framework',
   );
 
   // Add site-wide theme settings
@@ -68,8 +69,29 @@ function phptemplate_settings($saved_settings) {
     '#type' => 'fieldset',
     '#title' => t('General settings'),
     '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
+    '#collapsed' => TRUE,
+    '#weight' => 1,
   );
+  
+  $form['tnt_container']['extra_fields'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Extra Fields'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#weight' => 0,
+  );
+
+  $form['tnt_container']['extra_fields']['page_bottom'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Page Bottom Text'),
+    '#description' => t('This text is show in the bottom page are. Leave blanc to remove'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#weight' => -1,
+    '#maxlength' => 600,
+    '#default_value' => $settings['page_bottom']
+  );
+
 
   // Theme fonts
   $form['tnt_container']['general_settings']['theme_font_config'] = array(

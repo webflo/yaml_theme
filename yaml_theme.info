@@ -19,6 +19,7 @@ regions[content_middle] = Content
 regions[content_bottom] = Content Bottom
 regions[footer_left] = Footer Left
 regions[footer_right] = Footer Right
+regions[page_bottom] = Page bottom
 
 version = "6.x-1.0"
 project = "yaml_theme"

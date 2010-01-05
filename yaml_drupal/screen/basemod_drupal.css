@@ -15,3 +15,8 @@
 .page65 { width:65% }
 .page60 { width:60% }
 .page55 { width:55% }
+
+#page_bottom {
+	margin:auto;
+	text-align:center;
+}

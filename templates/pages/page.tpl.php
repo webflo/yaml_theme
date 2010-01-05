@@ -198,6 +198,7 @@
   </div>
   <?php print $border_bottom ?>
 </div>
+<div id="page_bottom" <?=$page_width?>" <?=$page_width_exact?> ><?php print $page_bottom; ?> <?if($page_bottom_text != "") print $page_bottom_text?></div>
 <?php print $closure ?>
 </body>
 </html>

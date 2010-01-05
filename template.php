@@ -32,6 +32,8 @@ function yaml_theme_preprocess(&$vars, $hook) {
  * Page preprocessing
  */
 function yaml_theme_preprocess_page(&$vars) {
+   // extra fields
+   $vars['page_bottom_text']  =  theme_get_setting('page_bottom');
 
    $vars['page_width_exact']  =  theme_get_setting('page_width_exact');
    // If page_width_exact is empty, we use the fixed page_with to set the page width, otherwise..
