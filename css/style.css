@@ -15,19 +15,12 @@ ul.primary li.active a, ul.primary li a {
 	color: #666;
 	font-weight: bold;
 	font-size: 11px;
-	padding: 5px 25px;
-	height: 30px;
 }
 
 ul.primary li.active a {
 	background: #fff;
 	border-color:#ccc;
 	color: #555;
-}
-
-ul.primary {
-	padding:0 0 5px 1em;
-	margin: 5px 0;
 }
 
 ul.primary li a:hover {
@@ -111,14 +104,7 @@ ul.secondary a.active {
 
 .menu li a{
 	display: block;
-	padding-left: 0px;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-left: 20px;
-	height: 20px;
-
-	
-	
+	height: 20px;	
 }
 
 .menu li a.active {
@@ -126,28 +112,12 @@ ul.secondary a.active {
 
 }
 
-ul.menu li li{
-	
+ul.menu li li{	
 	width: 250px;
 	margin: 0; 
-	list-style: none;
-	
-	
-}
-.menu li li a {
-	padding-left: 35px;
+	list-style: none;	
 }
 
-.menu li li li a {
-	padding-left: 55px;
-}
-
-.menu li li li li a {
-	padding-left: 75px;
-}
-.menu li li li li li a {
-	padding-left: 95px;
-}
 
 .menu li ul {
 	padding-left: 0px;	

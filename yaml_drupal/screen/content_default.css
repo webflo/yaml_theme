@@ -3,7 +3,7 @@
  * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
  *
  * (en) Uniform design of standard content elements
- * (de) Einheitliche Standardformatierungen fŸr die wichtigten Inhalts-Elemente
+ * (de) Einheitliche Standardformatierungen fï¿½r die wichtigten Inhalts-Elemente
  *
  * @copyright       Copyright 2005-2009, Dirk Jesse
  * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
@@ -22,14 +22,14 @@
   * Fonts
   *
   * (en) global settings of font-families and font-sizes
-  * (de) Globale Einstellungen fŸr Zeichensatz und Schriftgrš§en
+  * (de) Globale Einstellungen fï¿½r Zeichensatz und Schriftgrï¿½ï¿½en
   *
   * @section content-global-settings
   */
 
  /**
   * (en) reset monospaced elements to font size 16px in all browsers
-  * (de) Schriftgrš§e von monospaced Elemente in allen Browsern auf 16 Pixel setzen
+  * (de) Schriftgrï¿½ï¿½e von monospaced Elemente in allen Browsern auf 16 Pixel setzen
   *
   * @see: http://webkit.org/blog/67/strange-medium/
   */
@@ -43,7 +43,7 @@
     color:#444;
   }
 
-  /*--- Headings | †berschriften ------------------------------------------------------------------------*/
+  /*--- Headings | ï¿½berschriften ------------------------------------------------------------------------*/
 
   h1,h2,h3,h4,h5,h6 {
     font-family:Arial,Helvetica,sans-serif; 
@@ -115,8 +115,8 @@
 
   /*--- Links ----------------------------------------------------------------------------------------- */
 
-  a { color:#4D87C7; background:transparent; text-decoration:none; }
-  a:visited  { color:#036; }
+  a { color:#002BB8; background:transparent; text-decoration:none; }
+  a:visited  { color:#002BB8; }
 
   a:focus,
   a:hover,
@@ -163,7 +163,7 @@
   * Tables | Tabellen
   *
   * (en) Generic classes for table-width and design definition
-  * (de) Generische Klassen fŸr die Tabellenbreite und Gestaltungsvorschriften fŸr Tabellen
+  * (de) Generische Klassen fï¿½r die Tabellenbreite und Gestaltungsvorschriften fï¿½r Tabellen
   *
   * @section content-tables
   */

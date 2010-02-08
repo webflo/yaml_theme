@@ -18,6 +18,7 @@ function yaml_theme_default_theme_settings() {
     'fix_css_limit'                         => 0,
     'block_config_link'                     => 1,
     'theme_yaml_layout'                     => '3col_123',
+    'theme_yaml_show_header'                => 1,
     'page_width'                            => 'page100',
     'theme_font'                            => 'none',
     'theme_font_size'                       => 'font-size-13',
@@ -72,7 +73,13 @@ function phptemplate_settings($saved_settings) {
     '#collapsed' => TRUE,
     '#weight' => 1,
   );
-  
+  $form['tnt_container']['general_settings']['theme_yaml_show_header'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show header'),
+    '#default_value' => $settings['theme_yaml_show_header'],
+    '#weight' => 1,
+  );
+
   $form['tnt_container']['extra_fields'] = array(
     '#type' => 'fieldset',
     '#title' => t('Extra Fields'),
@@ -153,7 +160,7 @@ function phptemplate_settings($saved_settings) {
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   );
-  
+
   $yaml_layouts = array();
   $yaml_layouts['3col_123'] = '3col_123';
   $yaml_layouts['2col_left_13'] = '2col_left_13';

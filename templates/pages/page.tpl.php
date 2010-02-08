@@ -26,39 +26,46 @@
 			  <? if($top_left) { print $top_left; }?>
 		  </div>
 		</div>
-	 
+
 		<div id="top-right" class="c50r">
 		  <div class="subcr">
-			<!-- Inhalt rechter Block -->		
-			<? if($top_right) { print $top_right; }?>
+			<!-- Inhalt rechter Block -->
+			<? if($top_right || 1) { print $top_right; }?>
 		  </div>
 		</div>
-	  </div> 
+	  </div>
     </div>
     <!-- end: top -->
     <!-- begin: header -->
     <div id="header" class="clearfix">
 	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
 	  <div class="subcolumns">
+	  <div id="header">
+      <div id="header_full">
+        <? if($header_full) { print $header_full; }?>
+      </div>
+    </div>
 		<div id="header-left" class="c50l">
 		  <div class="subcl">
-			  <?php if ($logo) { ?><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><img id="site-logo" class="_trans" src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a><?php } ?>
-			  <?php if ($site_name) { ?><h1 id="site-name"><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
-			  <?php if ($site_slogan) { ?><div id="site-slogan"><?php print $site_slogan ?></div><?php } ?>
-			  <? if($header_left) { print $header_left; }?>
+		    <?php if($theme_show_header == 1) {?>
+  			  <?php if ($logo) { ?><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><img id="site-logo" class="_trans" src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a><?php } ?>
+  			  <?php if ($site_name) { ?><h1 id="site-name"><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
+  			  <?php if ($site_slogan) { ?><div id="site-slogan"><?php print $site_slogan ?></div><?php } ?>
+  			  <? if($header_left) { print $header_left; }?>
+  			<?php }?>
 		  </div>
 		</div>
-	 
+
 		<div id="header-right" class="c50r">
 		  <div class="subcr">
 			  <div id="topnav">
 				<a class="skip" href="#navigation" title="<?php print t('Skip to the navigation') ?>"><?php print t('Skip to the navigation') ?></a><span class="hideme">.</span>
 				<a class="skip" href="#content" title="<?php print t('Skip to the content') ?>"><?php print t('Skip to the content') ?></a><span class="hideme">.</span>
-			  </div>			  
+			  </div>
 			<? if($header_right) { print $header_right; }?>
 		  </div>
 		</div>
-	  </div> 
+	  </div>
     </div>
     <!-- end: header -->
     <!-- begin: main navigation #nav -->
@@ -76,7 +83,6 @@
 
     <!-- begin: main content area #main -->
     <div id="main">
-
       <?php if ($mission) { ?>
       <!-- #mission: between main navigation and content -->
       <div id="mission" class="clearfix">
@@ -87,6 +93,7 @@
       <?php if ($left_top||$left_middle||$left_bottom): ?>
       <!-- begin: #col1 - first float column -->
       <div id="col1">
+
         <div id="col1_content" class="clearfix">
           <div id="col1_inside" class="floatbox">
    	    <?php if ($left_top): ?>
@@ -143,17 +150,22 @@
 		    <?php if ($breadcrumb) { ?>
 		        <?php print $breadcrumb ?>
 			<?php } ?>
+			 <?php if ($content_above_tabs): ?>
+        <div id="content_above_tabs" class="clearfix">
+          <?php print $content_above_tabs ?>
+        </div>
+      <?php endif; ?>
 			<?php if ($tabs) { ?>
-		      <div class="tabs">
+		      <div class="local-task">
 		        <?php print $tabs ?>
 			  </div>
 			<?php } ?>
-			<?php if ($content_top): ?>
-			  <div class="content_top">
-				  <?php print $content_top ?>
+			<?php if ($content_below_tabs): ?>
+			  <div id="content_below_tabs" class="clearfix">
+				  <?php print $content_below_tabs ?>
 			  </div>
-                    <?php endif; ?>
-			<div class="content <? if(!empty($node)) { print "node-".$node->nid;print " node-type-".$node->type; } ?> op-<?=$current_op?>">
+      <?php endif; ?>
+			<div class="content-region <? if(!empty($node)) { print "node-".$node->nid;print " node-type-".$node->type; } ?> op-<?=$current_op?> clearfix">
   			  <?php if($title) { ?><h2 class="pagetitle"><?php print $title ?></h2><?php } ?>
 			  <?php if ($show_messages && $messages): print $messages; endif; ?>
 			  <?php print $help ?>
@@ -161,7 +173,7 @@
 			  <?php print $feed_icons ?>
 			</div>
 			<?php if ($content_bottom): ?>
-			  <div class="content_bottom">
+			  <div class="content_bottom clearfix">
 				  <?php print $content_bottom ?>
 			  </div>
             <?php endif; ?>
@@ -176,7 +188,7 @@
     <!-- end: #main -->
 
     <!-- begin: #footer -->
-    <div id="footer">
+    <div id="footer clearfix">
 	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
 	  <div class="subcolumns">
 		<div class="c50l">
@@ -185,14 +197,14 @@
 	       <?php print $footer_left ?>
 		  </div>
 		</div>
-	  
+
 		<div class="c50r">
 		  <div class="subcr">
 			<!-- Inhalt rechter Block -->
 	       <?php print $footer_right ?>
 		  </div>
 		</div>
-	  </div>     
+	  </div>
     </div>
     <!-- end: #footer -->
   </div>

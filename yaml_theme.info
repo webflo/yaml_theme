@@ -5,6 +5,7 @@ description = A Drupal theme based on the  YAML CSS Framework
 ; Add theme regions
 regions[top_left] = Topbar Left
 regions[top_right] = Topbar Right 
+regions[header_full] = Header Full 
 regions[header_left] = Header Left 
 regions[header_right] = Header Right 
 regions[navigation] = Navigation
@@ -14,7 +15,8 @@ regions[left_bottom] = Sidebar Left Bottom
 regions[right_top] = Sidebar Right Top 
 regions[right_middle] = Sidebar Right Middle 
 regions[right_bottom] = Sidebar Right Bottom 
-regions[content_top] = Content Top
+regions[content_above_tabs] = Content above Tabs
+regions[content_below_tabs] = Content below Tabs
 regions[content_middle] = Content
 regions[content_bottom] = Content Bottom
 regions[footer_left] = Footer Left
@@ -44,5 +46,3 @@ skinr[yaml_theme-rounded][options][1][class] = skin-option-class
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/drupal.css
 stylesheets[all][] = css/typography.css
-
-stylesheets[all][] = yaml.css
