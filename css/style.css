@@ -1,13 +1,4 @@
 /* ------------------------ Drupal overrides ---------------------- */
-.links_footer {
-	padding-bottom: 10px;
-}
-
-.date {
-	font-size: 10px;
-	color: #888;
-}
-
 
 ul.primary li.active a, ul.primary li a {
 	background-color: #eee;
@@ -27,150 +18,9 @@ ul.primary li a:hover {
 	background-color:#ffffff;
 }
 
-/* left navigation */
 
-.menu {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-li.collapsed {
-	clear: both;
-}
-ul.menu {
-	padding-bottom: 5px;
-	padding: 50px;
-}
-
-ul.menu li {
-	background: url(images/h2_bottom_border.gif) repeat-x bottom;
-	list-style: none;	
-}
-
-ul.menu li.active-trail {
-	background: url(images/h2_bottom_border.gif) repeat-x bottom;
-}
-
-ul.menu li.active-trail a{
-	background: url(images/menu_expanded.png) no-repeat 5px 12px;
-}
-ul.menu li.active-trail li a{
-	background: url(images/menu_leaf.png) no-repeat 20px 12px;
-}
-
-ul.menu li.active-trail li.active-trail a{
-	background: url(images/menu_expanded.png) no-repeat 20px 12px;
-}
-
-ul.menu li.active-trail li.active-trail li a {
-	background: url(images/menu_leaf.png) no-repeat 40px 12px;
-}
-
-ul.menu li.active-trail li.active-trail li.active-trail a{
-	background: url(images/menu_expanded.png) no-repeat 40px 12px;
-}
-
-ul.menu li.active-trail li.active-trail li.active-trail li a {
-	background: url(images/menu_leaf.png) no-repeat 60px 12px;
-}
-
-ul.menu li.active-trail li.active-trail li.active-trail li.active-trail a{
-	background: url(images/menu_expanded.png) no-repeat 60px 12px;
-}
-
-ul.menu li.active-trail li.active-trail li.active-trail li.active-trail li a {
-	background: url(images/menu_leaf.png) no-repeat 80px 12px;
-}
-
-
-ul.menu li.active-trail li.last a{
-	background: url(images/menu_expanded.png) no-repeat 20px 12px;
-}
-
-ul.menu li {
-	margin: 0; 
-	padding: 0;
-	list-style: none;
-	padding-bottom: 2px;
-}
-
-li a.active {
-	color:555;
-}
 ul.secondary a.active {
 	border-bottom:1px solid #999999;
-}
-
-.menu li a{
-	display: block;
-	height: 20px;	
-}
-
-.menu li a.active {
-	color: #777;
-
-}
-
-ul.menu li li{	
-	width: 250px;
-	margin: 0; 
-	list-style: none;	
-}
-
-
-.menu li ul {
-	padding-left: 0px;	
-}
-
-#footer .menu li a{
-	display: inline;
-	padding: 0 0 0 15px;
-	background: none;
-	font-size: 11px;
-
-}
-
-#footer .menu li {
-	list-style: none;
-	width: auto;
-	float: left;
-	background: none;
-}
-
-#footer .menu li a.active {
-	background: none;
-	font-weight: bold;
-	color: #777;
-}
-
-#footer ul.menu {
-	display: inline;
-	float: right;
-	width: auto;
-	padding: 0;
-	margin: 0;
-}
-.block ul {
-
-	list-style: none;
-}
-ul.menu {
-	list-style: none;
-	text-align:left;
-	margin:0;
-	padding:0;
-}
-
-
-li.expanded, li.collapsed, li.leaf {
-	list-style-image: none;
-}
-
-ul.menu li {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding: 0;
 }
 
 
@@ -327,8 +177,7 @@ div.error {
 }
 .comment h3{
 	margin: 0;
-	padding: 0;
-	margin-top: 300px;
+  padding: 0;	
 }
 
 .comment .title a {

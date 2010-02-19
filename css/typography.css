@@ -80,6 +80,7 @@ blockquote * > :first-child {
 
 blockquote  { 
 	margin:0px 0px 0px 8px;
+	padding:4px;
 	font-style: italic; 
 	background: url('images/close-quote.gif') no-repeat right bottom;    /* LTR */
 

@@ -20,6 +20,7 @@
  * @ingroup views_templates
  */
 ?>
+<?php if($title) { ?><h2 class="pagetitle"><?php print $title ?></h2><?php } ?>
 <div class="view view-<?php print $css_name; ?> view-id-<?php print $name; ?> view-display-id-<?php print $display_id; ?>">
   <?php if ($admin_links): ?>
     <div class="views-admin-links views-hide">

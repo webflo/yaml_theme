@@ -155,9 +155,10 @@
           <?php print $content_above_tabs ?>
         </div>
       <?php endif; ?>
-			<?php if ($tabs) { ?>
-		      <div class="local-task">
-		        <?php print $tabs ?>
+			<?php if ($tabs_primary) { ?>
+		     <div class="local-task clearfix">
+		        <?php print $tabs_primary?>
+		        <?php print $tabs_secondary?>
 			  </div>
 			<?php } ?>
 			<?php if ($content_below_tabs): ?>
@@ -166,7 +167,7 @@
 			  </div>
       <?php endif; ?>
 			<div class="content-region <? if(!empty($node)) { print "node-".$node->nid;print " node-type-".$node->type; } ?> op-<?=$current_op?> clearfix">
-  			  <?php if($title) { ?><h2 class="pagetitle"><?php print $title ?></h2><?php } ?>
+        <?php print $content_above_maincontent ?>
 			  <?php if ($show_messages && $messages): print $messages; endif; ?>
 			  <?php print $help ?>
 			  <?php print $content ?>
@@ -176,7 +177,7 @@
 			  <div class="content_bottom clearfix">
 				  <?php print $content_bottom ?>
 			  </div>
-            <?php endif; ?>
+      <?php endif; ?>
           </div>
         </div>
         <div id="ie_clearing">&nbsp;</div>

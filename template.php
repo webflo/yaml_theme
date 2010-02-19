@@ -5,62 +5,64 @@ require_once('theme-settings.php');
  * Global preprocessing
  */
 function yaml_theme_preprocess(&$vars, $hook) {
-   $yaml_layout = theme_get_setting('theme_yaml_layout');
-   // Set the page layout to the current yaml layout
-   // so actually (if existent) the page template from
-   // templates/pages/page-$yaml_layout.tpl.php
-   // will be used.
-   // Currently we only use one page.tpl.php for all of them
-   // but this could change in the future or in a subtheme,
-   // maybe for a very special layout.
-   $vars['template_files'][] = "page-$yaml_layout";
+  $yaml_layout = theme_get_setting('theme_yaml_layout');
+  // Set the page layout to the current yaml layout
+  // so actually (if existent) the page template from
+  // templates/pages/page-$yaml_layout.tpl.php
+  // will be used.
+  // Currently we only use one page.tpl.php for all of them
+  // but this could change in the future or in a subtheme,
+  // maybe for a very special layout.
+  $vars['template_files'][] = "page-$yaml_layout";
 
-   // This is out little helper for using only one page.tpl.php.
-   // We use it to determine the column count and hide the third column
-   // if needed. Of course we could CSS for that, but why heat the client
-   // browser even more?
-   preg_match('/^(\d)col_.*/',$yaml_layout, $match);
-   $vars['theme_cols'] = $match['1'];
+  // This is out little helper for using only one page.tpl.php.
+  // We use it to determine the column count and hide the third column
+  // if needed. Of course we could CSS for that, but why heat the client
+  // browser even more?
+  preg_match('/^(\d)col_.*/',$yaml_layout, $match);
+  $vars['theme_cols'] = $match['1'];
 }
 
 /**
  * Page preprocessing
  */
 function yaml_theme_preprocess_page(&$vars) {
-   // extra fields
-   $vars['page_bottom_text']  =  theme_get_setting('page_bottom');
+  // extra fields
+  $vars['page_bottom_text']  =  theme_get_setting('page_bottom');
 
-   $vars['page_width_exact']  =  theme_get_setting('page_width_exact');
-   // If page_width_exact is empty, we use the fixed page_with to set the page width, otherwise..
-   if($vars['page_width_exact'] == "") {
-	   $vars['page_width'] = theme_get_setting('page_width');
-   }
-   else { // use the customer one. Could be px, % or em
+  $vars['page_width_exact']  =  theme_get_setting('page_width_exact');
+  // If page_width_exact is empty, we use the fixed page_with to set the page width, otherwise..
+  if($vars['page_width_exact'] == "") {
+    $vars['page_width'] = theme_get_setting('page_width');
+  }
+  else { // use the customer one. Could be px, % or em
    	$vars['page_width_exact']  =  ' style="width:'.$vars['page_width_exact'].'"';
-   }
-   $vars['theme_show_header'] = theme_get_setting('theme_yaml_show_header');
+  }
+  $vars['theme_show_header'] = theme_get_setting('theme_yaml_show_header');
 
-   // sometimes its useful to make styles specific to the current operation ( edit, view)
-   $vars['current_op'] = _yaml_theme_get_current_op();
+  // sometimes its useful to make styles specific to the current operation ( edit, view)
+  $vars['current_op'] = _yaml_theme_get_current_op();
 
-   // Now we add the basemod for the current layout
-   $theme = drupal_get_path('theme','yaml_theme');
-   $custom_yaml = "yaml_drupal";
-   $yaml_layout = theme_get_setting('theme_yaml_layout');
+  // Now we add the basemod for the current layout
+  $theme = drupal_get_path('theme','yaml_theme');
+  $custom_yaml = "yaml_drupal";
+  $yaml_layout = theme_get_setting('theme_yaml_layout');
 
-   // Little hack to prepend a hash key to the elements (as we can pass keys to array_unshift).
-   $tmp["$theme/yaml.css"] = true;
-   $tmp["$theme/$custom_yaml/screen/basemod_$yaml_layout.css"] = true;
-   foreach($vars['css']['all']['theme'] as $path => $bool) {
-     $tmp[$path] = $bool;
-   }
-   $vars['css']['all']['theme'] = $tmp;
+  // Little hack to prepend a hash key to the elements (as we can pass keys to array_unshift).
+  $tmp["$theme/yaml.css"] = true;
+  $tmp["$theme/$custom_yaml/screen/basemod_$yaml_layout.css"] = true;
+  foreach($vars['css']['all']['theme'] as $path => $bool) {
+    $tmp[$path] = $bool;
+  }
+  $vars['css']['all']['theme'] = $tmp;
 
-   // We need to provide the array, as we actually did not change the cached internal
-   // css array. Rerender all css includes and change the variable, which will later
-   // print it into the page.tpl
-   $vars['styles'] = drupal_get_css($vars['css']);
+  // We need to provide the array, as we actually did not change the cached internal
+  // css array. Rerender all css includes and change the variable, which will later
+  // print it into the page.tpl
+  $vars['styles'] = drupal_get_css($vars['css']);
 
+  $vars['tabs_primary'] = theme('yaml_tabs_primary',menu_primary_local_tasks());
+  $vars['tabs_secondary'] = theme('yaml_tabs_secondary',menu_secondary_local_tasks());
 }
 
 /**
@@ -75,6 +77,17 @@ function yaml_theme_preprocess_node(&$vars,$hook) {
   if (function_exists($function)) {
     $function($vars, $hook);
   }
+}
+
+function yaml_theme_theme() {
+  return array(
+    'yaml_tabs_primary' => array(
+      'arguments' => array('tasks' => '')
+    ),
+    'yaml_tabs_secondary' => array(
+      'arguments' => array('tasks' => '')
+    )
+  );
 }
 
 /**
@@ -115,17 +128,36 @@ function yaml_theme_preprocess_views_view(&$vars) {
 function _yaml_theme_get_current_op() {
   $mode = "view";
   if ((arg(0) == 'node' && arg(2) == 'edit')) {
-      $mode = "edit-node";
+    $mode = "edit-node";
   }
   else if ((arg(0) == 'node' && arg(2) == 'revisions' && arg(3) == 'view')) {
   	 $mode = "compare-revisions";
   }
   else if( arg(0) == 'user' && arg(2) == 'edit' ){
-  	$mode = "edit-user";
+    $mode = "edit-user";
   }
   else if (arg(0) == 'node' && arg(1) == 'add' && arg(2) != "") {
-  	$mode = "add-mode";
+    $mode = "add-mode";
   }
 
   return $mode;
 }
+
+
+function yaml_theme_yaml_tabs_primary($tasks) {
+  if($tasks != "") {
+    return "<ul class=\"tabs primary\">\n". $tasks ."</ul>\n";
+  }
+  //else
+  return '';
+}
+
+function yaml_theme_yaml_tabs_secondary($tasks) {
+  if($tasks != "") {
+    return "<ul class=\"tabs secondary\">\n". $tasks ."</ul>\n";
+  }
+  //else
+  return '';
+}
+
+
