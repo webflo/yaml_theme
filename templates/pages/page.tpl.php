@@ -155,12 +155,12 @@
           <?php print $content_above_tabs ?>
         </div>
       <?php endif; ?>
-			<?php if ($tabs_primary) { ?>
+			<?php if ( $tabs_primary != '') : ?>
 		     <div class="local-task clearfix">
-		        <?php print $tabs_primary?>
-		        <?php print $tabs_secondary?>
+          <?php print $tabs_primary?>
+          <?php print $tabs_secondary?>
 			  </div>
-			<?php } ?>
+			<?php endif; ?>
 			<?php if ($content_below_tabs): ?>
 			  <div id="content_below_tabs" class="clearfix">
 				  <?php print $content_below_tabs ?>
