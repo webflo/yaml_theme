@@ -21,6 +21,9 @@ function yaml_theme_preprocess(&$vars, $hook) {
   // browser even more?
   preg_match('/^(\d)col_.*/',$yaml_layout, $match);
   $vars['theme_cols'] = $match['1'];
+  $vars['ie_css'] = ' <!--[if lte 5]>
+  <style type="text/css" media="all">@import "yaml/core/iehacks.css";</style>
+  <![endif]-->';
 }
 
 /**

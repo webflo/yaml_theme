@@ -1,6 +1,5 @@
 /* yaml core */
 @import "yaml/core/base.css";
-@import "yaml/core/iehacks.css";
 @import "yaml/navigation/nav_shinybuttons.css";
 @import "yaml/print/print_draft.css";
 @import "yaml/screen/forms.css";

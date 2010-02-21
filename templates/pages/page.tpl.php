@@ -8,7 +8,9 @@
   <title><?php print $head_title ?></title>
   <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
   <?php print $styles ?>
+  <?php print $ie_css ?>
   <?php print $scripts ?>
+
 </head>
 
 <body class="<?php print $body_classes; ?>">
