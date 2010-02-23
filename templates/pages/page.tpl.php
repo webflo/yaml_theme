@@ -192,6 +192,9 @@
 
     <!-- begin: #footer -->
     <div id="footer clearfix">
+      <div id="footer_full" >
+        <? if($footer_full) { print $footer_full; }?>
+      </div>
 	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
 	  <div class="subcolumns">
 		<div class="c50l">

@@ -22,6 +22,7 @@ regions[content] = Main Content
 regions[content_bottom] = Below Main Content
 regions[footer_left] = Footer Left
 regions[footer_right] = Footer Right
+regions[footer_full] = Footer Full
 regions[page_bottom] = Page bottom
 
 version = "6.x-1.0"
