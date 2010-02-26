@@ -181,11 +181,7 @@
   tbody th { border-bottom:1px solid #fff; text-align:left; }
   tbody td { border-bottom:1px solid #eee; }
 
-  tbody tr:hover th[scope="row"],
-  tbody tr:hover tbody th.sub { background:#f0e8e8; }
-  tbody tr:hover td { background:#fff8f8; }
-
- /**
+   /**
   * ------------------------------------------------------------------------------------------------- #
   *
   * Miscellaneous | Sonstiges

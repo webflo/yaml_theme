@@ -54,7 +54,11 @@ function phptemplate_settings($saved_settings) {
 
   // Combine default and saved theme settings
   $settings = array_merge($defaults, $saved_settings);
+  return _yaml_theme_settings_form($settings);
   // Create theme settings form widgets using Forms API
+}
+
+function _yaml_theme_settings_form($settings) {
 
   // TNT Fieldset
   $form['tnt_container'] = array(
@@ -206,4 +210,5 @@ function phptemplate_settings($saved_settings) {
 
   // Return theme settings form
   return $form;
+
 }
