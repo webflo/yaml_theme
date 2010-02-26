@@ -19,6 +19,7 @@ function yaml_theme_default_theme_settings() {
     'block_config_link'                     => 1,
     'theme_yaml_layout'                     => '3col_123',
     'theme_yaml_show_header'                => 1,
+    'theme_show_local_tasks'                => 1,
     'page_width'                            => 'page100',
     'theme_font'                            => 'none',
     'theme_font_size'                       => 'font-size-13',
@@ -83,6 +84,13 @@ function _yaml_theme_settings_form($settings) {
     '#default_value' => $settings['theme_yaml_show_header'],
     '#weight' => 1,
   );
+  $form['tnt_container']['general_settings']['theme_show_local_tasks'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Local Tasks'),
+    '#description' => t('Should yaml show the tabs which are hardcoded into the page.tpl.php'),
+    '#default_value' => $settings['theme_show_local_tasks'],
+    '#weight' => 1,
+  );
 
   $form['tnt_container']['extra_fields'] = array(
     '#type' => 'fieldset',
@@ -102,7 +110,6 @@ function _yaml_theme_settings_form($settings) {
     '#maxlength' => 600,
     '#default_value' => $settings['page_bottom']
   );
-
 
   // Theme fonts
   $form['tnt_container']['general_settings']['theme_font_config'] = array(

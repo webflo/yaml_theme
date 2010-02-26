@@ -71,15 +71,11 @@
     </div>
     <!-- end: header -->
     <!-- begin: main navigation #nav -->
-    <div id="nav-bar" class="clearfix">
-	  <div class="subcolumns">
+    <div id="nav" class="clearfix">
 		 <a id="navigation" name="navigation"></a> <!-- skip anchor: navigation -->
-	          <?php if ($navigation): ?>
-			<div class="hlist">
+	   <?php if ($navigation): ?>
 			  <?php print $navigation ?>
-			</div>
-		<?php endif; ?>
-	  </div>
+		 <?php endif; ?>
     </div>
     <!-- end: main navigation -->
 
@@ -157,7 +153,7 @@
           <?php print $content_above_tabs ?>
         </div>
       <?php endif; ?>
-			<?php if ( $tabs_primary != '') : ?>
+			<?php if ( $tabs_primary != '' && $theme_show_local_tasks) : ?>
 		     <div class="local-task clearfix">
           <?php print $tabs_primary?>
           <?php print $tabs_secondary?>

@@ -34,6 +34,7 @@ function yaml_theme_preprocess_page(&$vars) {
   $vars['page_bottom_text']  =  theme_get_setting('page_bottom');
 
   $vars['page_width_exact']  =  theme_get_setting('page_width_exact');
+  $vars['theme_show_local_tasks']  =  theme_get_setting('theme_show_local_tasks');
   // If page_width_exact is empty, we use the fixed page_with to set the page width, otherwise..
   if($vars['page_width_exact'] == "") {
     $vars['page_width'] = theme_get_setting('page_width');
@@ -41,6 +42,7 @@ function yaml_theme_preprocess_page(&$vars) {
   else { // use the customer one. Could be px, % or em
    	$vars['page_width_exact']  =  ' style="width:'.$vars['page_width_exact'].'"';
   }
+
   $vars['theme_show_header'] = theme_get_setting('theme_yaml_show_header');
 
   // sometimes its useful to make styles specific to the current operation ( edit, view)
