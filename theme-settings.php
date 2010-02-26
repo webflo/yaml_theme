@@ -169,6 +169,7 @@ function _yaml_theme_settings_form($settings) {
   $yaml_layouts['3col_123'] = '3col_123';
   $yaml_layouts['2col_left_13'] = '2col_left_13';
   $yaml_layouts['2col_right_31'] = '2col_right_31';
+  $yaml_layouts['1col'] = '1col';
 
   $form['tnt_container']['general_settings']['theme_yaml_config']['theme_yaml_layout'] = array(
     '#type'          => 'radios',

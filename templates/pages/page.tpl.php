@@ -92,8 +92,8 @@
       </div>
       <?php } ?>
 
-      <?php if ($left_top||$left_middle||$left_bottom): ?>
       <!-- begin: #col1 - first float column -->
+      <?php if (($theme_cols == 2) && ($left_top||$left_middle||$left_bottom)): ?>
       <div id="col1">
 
         <div id="col1_content" class="clearfix">
