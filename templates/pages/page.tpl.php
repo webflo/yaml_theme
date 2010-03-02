@@ -41,32 +41,32 @@
     <!-- begin: header -->
     <div id="header" class="clearfix">
 	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
-	  <div class="subcolumns">
+
 	  <div id="header">
       <div id="header_full">
         <? if($header_full) { print $header_full; }?>
       </div>
     </div>
-		<div id="header-left" class="c50l">
-		  <div class="subcl">
-		    <?php if($theme_show_header == 1) {?>
-  			  <?php if ($logo) { ?><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><img id="site-logo" class="_trans" src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a><?php } ?>
-  			  <?php if ($site_name) { ?><h1 id="site-name"><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
-  			  <?php if ($site_slogan) { ?><div id="site-slogan"><?php print $site_slogan ?></div><?php } ?>
-  			  <? if($header_left) { print $header_left; }?>
-  			<?php }?>
-		  </div>
-		</div>
-
-		<div id="header-right" class="c50r">
-		  <div class="subcr">
-			  <div id="topnav">
-				<a class="skip" href="#navigation" title="<?php print t('Skip to the navigation') ?>"><?php print t('Skip to the navigation') ?></a><span class="hideme">.</span>
-				<a class="skip" href="#content" title="<?php print t('Skip to the content') ?>"><?php print t('Skip to the content') ?></a><span class="hideme">.</span>
-			  </div>
-			<? if($header_right) { print $header_right; }?>
-		  </div>
-		</div>
+    <div id="header-splitted" class="subcolumns >
+  		<div id="header-left" class="c50l">
+  		  <div class="subcl">
+  		    <?php if($theme_show_header == 1) {?>
+    			  <?php if ($logo) { ?><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><img id="site-logo" class="_trans" src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a><?php } ?>
+    			  <?php if ($site_name) { ?><h1 id="site-name"><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
+    			  <?php if ($site_slogan) { ?><div id="site-slogan"><?php print $site_slogan ?></div><?php } ?>
+    			  <? if($header_left) { print $header_left; }?>
+    			<?php }?>
+  		  </div>
+  		</div>
+  		<div id="header-right" class="c50r">
+  		  <div class="subcr">
+  			  <div id="topnav">
+  				<a class="skip" href="#navigation" title="<?php print t('Skip to the navigation') ?>"><?php print t('Skip to the navigation') ?></a><span class="hideme">.</span>
+  				<a class="skip" href="#content" title="<?php print t('Skip to the content') ?>"><?php print t('Skip to the content') ?></a><span class="hideme">.</span>
+  			  </div>
+  			<? if($header_right) { print $header_right; }?>
+  		  </div>
+  		</div>
 	  </div>
     </div>
     <!-- end: header -->
