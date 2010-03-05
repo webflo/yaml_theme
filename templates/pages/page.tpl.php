@@ -18,7 +18,7 @@
 
 <div class="page_margins page-center <?=$page_width?>" <?=$page_width_exact?> >
   <?php print $border_top ?>
-  <div class="page" >
+  <div class="page">
     <!-- begin: top -->
     <div id="top" class="clearfix">
 	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
@@ -89,25 +89,24 @@
       <?php } ?>
 
       <!-- begin: #col1 - first float column -->
-      <?php if (($theme_cols == 2) && ($left_top||$left_middle||$left_bottom)): ?>
+      <?php if (($theme_cols >= 2) && ($left_top||$left_middle||$left_bottom)): ?>
       <div id="col1">
-
         <div id="col1_content" class="clearfix">
           <div id="col1_inside" class="floatbox">
-   	    <?php if ($left_top): ?>
-			  <div class="left_top">
-				  <?php print $left_top ?>
-			  </div>
+       	    <?php if ($left_top): ?>
+      			  <div class="left_top">
+      				  <?php print $left_top ?>
+      			  </div>
             <?php endif; ?>
-			<?php if ($left_middle): ?>
-			  <div class="left_middle">
-				  <?php print $left_middle ?>
-			  </div>
+    			  <?php if ($left_middle): ?>
+      			  <div class="left_middle">
+      				  <?php print $left_middle ?>
+      			  </div>
             <?php endif; ?>
-			<?php if ($left_bottom): ?>
-			  <div class="left_bottom">
-				  <?php print $left_bottom ?>
-			  </div>
+    			  <?php if ($left_bottom): ?>
+      			  <div class="left_bottom">
+      				  <?php print $left_bottom ?>
+      			  </div>
             <?php endif; ?>
           </div>
         </div>

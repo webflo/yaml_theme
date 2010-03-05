@@ -19,8 +19,16 @@ function yaml_theme_preprocess(&$vars, $hook) {
   // We use it to determine the column count and hide the third column
   // if needed. Of course we could CSS for that, but why heat the client
   // browser even more?
+  $override_layout = module_invoke_all('yaml_theme_layout',$yaml_layout, _yaml_theme_layouts());
+  if(is_array($override_layout) && count($override_layout) > 0) {
+    // only use the first
+    $yaml_layout = $override_layout[0];
+  };
+
   preg_match('/^(\d)col_.*/',$yaml_layout, $match);
   $vars['theme_cols'] = $match['1'];
+
+  $vars['yaml_layout'] = $yaml_layout;
   $vars['ie_css'] = ' <!--[if lte 5]>
   <style type="text/css" media="all">@import "yaml/core/iehacks.css";</style>
   <![endif]-->';
@@ -51,7 +59,7 @@ function yaml_theme_preprocess_page(&$vars) {
   // Now we add the basemod for the current layout
   $theme = drupal_get_path('theme','yaml_theme');
   $custom_yaml = "yaml_drupal";
-  $yaml_layout = theme_get_setting('theme_yaml_layout');
+  $yaml_layout = $vars['yaml_layout'];
 
   // Little hack to prepend a hash key to the elements (as we can pass keys to array_unshift).
   $tmp["$theme/yaml.css"] = true;
