@@ -1,81 +1,70 @@
 <?php
-// $Id: page.tpl.php,v 3.1.0.12 2009/06/07 00:00:00 hass Exp $
-?><?php if (!empty($xml_prolog)) { print $xml_prolog; } ?>
+// $Id:$
+if (!empty($xml_prolog)) { print $xml_prolog; }
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
-
 <head>
   <title><?php print $head_title ?></title>
-  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
   <?php print $styles ?>
   <?php print $ie_css ?>
   <?php print $scripts ?>
-
 </head>
 
 <body class="<?php print $body_classes; ?>">
 <?php if (isset($fontsize_init)) { print $fontsize_init; } ?>
 
 <div class="page_margins page-center <?=$page_width?>" <?=$page_width_exact?> >
-  <?php print $border_top ?>
   <div class="page">
     <!-- begin: top -->
     <div id="top" class="clearfix">
-	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
-	  <div class="subcolumns">
-		<div id="top-left" class="c50l">
-		  <div class="subcl">
-			  <? if($top_left) { print $top_left; }?>
-		  </div>
-		</div>
+  	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
+  	  <div class="subcolumns">
+      		<div id="top-left" class="c50l">
+      		  <div class="subcl">
+      			  <? if($top_left) { print $top_left; }?>
+      		  </div>
+      		</div>
 
-		<div id="top-right" class="c50r">
-		  <div class="subcr">
-			<!-- Inhalt rechter Block -->
-			<? if($top_right || 1) { print $top_right; }?>
-		  </div>
-		</div>
-	  </div>
+          <div id="top-right" class="c50r">
+            <div class="subcr">
+          	<!-- Inhalt rechter Block -->
+          	<? if($top_right || 1) { print $top_right; }?>
+            </div>
+          </div>
+	   </div>
     </div>
     <!-- end: top -->
     <!-- begin: header -->
-    <div id="header" class="clearfix">
-	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
-
 	  <div id="header">
-      <div id="header_full">
-        <? if($header_full) { print $header_full; }?>
-      </div>
-    </div>
-    <div id="header-splitted" class="subcolumns >
-  		<div id="header-left" class="c50l">
-  		  <div class="subcl">
-  		    <?php if($theme_show_header == 1) {?>
-    			  <?php if ($logo) { ?><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><img id="site-logo" class="_trans" src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a><?php } ?>
-    			  <?php if ($site_name) { ?><h1 id="site-name"><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
-    			  <?php if ($site_slogan) { ?><div id="site-slogan"><?php print $site_slogan ?></div><?php } ?>
-    			  <? if($header_left) { print $header_left; }?>
-    			<?php }?>
-  		  </div>
-  		</div>
-  		<div id="header-right" class="c50r">
-  		  <div class="subcr">
-  			  <div id="topnav">
-  				<a class="skip" href="#navigation" title="<?php print t('Skip to the navigation') ?>"><?php print t('Skip to the navigation') ?></a><span class="hideme">.</span>
-  				<a class="skip" href="#content" title="<?php print t('Skip to the content') ?>"><?php print t('Skip to the content') ?></a><span class="hideme">.</span>
-  			  </div>
-  			<? if($header_right) { print $header_right; }?>
-  		  </div>
-  		</div>
-	  </div>
+        <div id="header_full">
+          <? if($header_full) { print $header_full; }?>
+        </div>
+        <div id="header-splitted" class="subcolumns" >
+        		<div id="header-left" class="c50l">
+          		  <div class="subcl">
+          		    <?php if($theme_show_header == 1) {?>
+            			  <?php if ($logo) { ?><a href="<?php print $base_path ?>" title="<?php print $site_name?>"><img id="site-logo" class="_trans" src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a><?php } ?>
+            			  <?php if ($site_name && !$logo) { ?><h1 id="site-name"><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
+            			  <?php if ($site_slogan) { ?><div id="site-slogan"><?php print $site_slogan ?></div><?php } ?>
+            			  <? if($header_left) { print $header_left; }?>
+            			<?php }?>
+          		  </div>
+        		</div>
+        		<div id="header-right" class="c50r">
+                  <div class="subcr">
+                     <? if($header_right) { print $header_right; }?>
+                  </div>
+        		</div>
+        </div>
     </div>
     <!-- end: header -->
     <!-- begin: main navigation #nav -->
     <div id="nav" class="clearfix">
-		 <a id="navigation" name="navigation"></a> <!-- skip anchor: navigation -->
-	   <?php if ($navigation): ?>
-			  <?php print $navigation ?>
-		 <?php endif; ?>
+        <a id="navigation" name="navigation"></a> <!-- skip anchor: navigation -->
+        <?php if ($navigation): ?>
+          <?php print $navigation ?>
+        <?php endif; ?>
     </div>
     <!-- end: main navigation -->
 
@@ -119,20 +108,20 @@
       <div id="col2">
         <div id="col2_content" class="clearfix">
           <div id="col2_inside" class="floatbox">
-			<?php if ($right_top): ?>
-			  <div class="right_top">
-				  <?php print $right_top ?>
-			  </div>
+            <?php if ($right_top): ?>
+      			  <div class="right_top">
+      				  <?php print $right_top ?>
+      			  </div>
             <?php endif; ?>
-			<?php if ($right_middle): ?>
-			  <div class="right_middle">
-				  <?php print $right_middle ?>
-			  </div>
+            <?php if ($right_middle): ?>
+              <div class="right_middle">
+            	  <?php print $right_middle ?>
+              </div>
             <?php endif; ?>
-			<?php if ($right_bottom): ?>
-			  <div class="right_bottom">
-				  <?php print $right_bottom ?>
-			  </div>
+      			<?php if ($right_bottom): ?>
+      			  <div class="right_bottom">
+      				  <?php print $right_bottom ?>
+      			  </div>
             <?php endif; ?>
           </div>
         </div>
@@ -143,45 +132,44 @@
       <!-- begin: #col3 static column -->
       <div id="col3">
         <div id="col3_content" class="clearfix"> <a id="content" name="content"></a> <!-- skip anchor: content -->
-          <div id="col3_inside" class="floatbox">
-		    <?php if ($breadcrumb) { ?>
-		        <?php print $breadcrumb ?>
-			<?php } ?>
-			 <?php if ($content_above_tabs): ?>
-        <div id="content_above_tabs" class="clearfix">
-          <?php print $content_above_tabs ?>
-        </div>
-      <?php endif; ?>
-			<?php if ( $tabs_primary != '' && $theme_show_local_tasks) : ?>
-		     <div class="local-task clearfix">
-          <?php print $tabs_primary?>
-          <?php print $tabs_secondary?>
-			  </div>
-			<?php endif; ?>
-			<?php if ($content_below_tabs): ?>
-			  <div id="content_below_tabs" class="clearfix">
-				  <?php print $content_below_tabs ?>
-			  </div>
-      <?php endif; ?>
-			<div class="content-region <? if(!empty($node)) { print "node-".$node->nid;print " node-type-".$node->type; } ?> op-<?=$current_op?> clearfix">
-        <?php print $content_above_maincontent ?>
-			  <?php if ($show_messages && $messages): print $messages; endif; ?>
-			  <?php print $help ?>
-			  <?php print $content ?>
-			  <?php print $feed_icons ?>
-			</div>
-			<?php if ($content_bottom): ?>
-			  <div class="content_bottom clearfix">
-				  <?php print $content_bottom ?>
-			  </div>
-      <?php endif; ?>
-          </div>
+            <div id="col3_inside" class="floatbox">
+        	    <?php if ($breadcrumb) { ?>
+        	        <?php print $breadcrumb ?>
+        			<?php } ?>
+              <?php if ($content_above_tabs): ?>
+                <div id="content_above_tabs" class="clearfix">
+                  <?php print $content_above_tabs ?>
+                </div>
+              <?php endif; ?>
+        			<?php if ( $tabs_primary != '' && $theme_show_local_tasks) : ?>
+        		     <div class="local-task clearfix">
+                  <?php print $tabs_primary?>
+                  <?php print $tabs_secondary?>
+        			  </div>
+        			<?php endif; ?>
+        			<?php if ($content_below_tabs): ?>
+        			  <div id="content_below_tabs" class="clearfix">
+        				  <?php print $content_below_tabs ?>
+        			  </div>
+              <?php endif; ?>
+        			<div class="content-region <? if(!empty($node)) { print "node-".$node->nid;print " node-type-".$node->type; } ?> op-<?=$current_op?> clearfix">
+                <?php print $content_above_maincontent ?>
+        			  <?php if ($show_messages && $messages): print $messages; endif; ?>
+        			  <?php print $help ?>
+        			  <?php print $content ?>
+        			  <?php print $feed_icons ?>
+        			</div>
+        			<?php if ($content_bottom): ?>
+        			  <div class="content_bottom clearfix">
+        				  <?php print $content_bottom ?>
+        			  </div>
+              <?php endif; ?>
+            </div>
         </div>
         <div id="ie_clearing">&nbsp;</div>
         <!-- end: IE Column Clearing -->
       </div>
       <!-- end: #col3 -->
-
     </div>
     <!-- end: #main -->
 
@@ -190,28 +178,26 @@
       <div id="footer_full" >
         <? if($footer_full) { print $footer_full; }?>
       </div>
-	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
-	  <div class="subcolumns">
-		<div class="c50l">
-		  <div class="subcl">
-			<!-- Inhalt linker Block -->
-	       <?php print $footer_left ?>
-		  </div>
-		</div>
-
-		<div class="c50r">
-		  <div class="subcr">
-			<!-- Inhalt rechter Block -->
-	       <?php print $footer_right ?>
-		  </div>
-		</div>
-	  </div>
+  	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
+  	  <div class="subcolumns">
+    		  <div class="c50l">
+    		    <div class="subcl">
+      	       <?php print $footer_left ?>
+      		  </div>
+    		  </div>
+  		    <div class="c50r">
+  		      <div class="subcr">
+      	       <?php print $footer_right ?>
+      		  </div>
+  		    </div>
+      </div>
     </div>
     <!-- end: #footer -->
   </div>
-  <?php print $border_bottom ?>
-</div>
-<div id="page_bottom" <?=$page_width?>" <?=$page_width_exact?> ><?php print $page_bottom; ?> <?if($page_bottom_text != "") print $page_bottom_text?></div>
-<?php print $closure ?>
+  <div id="page_bottom" <?=$page_width?>" <?=$page_width_exact?>>
+    <?php print $page_bottom; ?>
+    <?if($page_bottom_text != "") print $page_bottom_text?>
+  </div>
+  <?php print $closure ?>
 </body>
 </html>
