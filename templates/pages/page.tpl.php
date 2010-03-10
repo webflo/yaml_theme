@@ -131,7 +131,7 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
 
       <!-- begin: #col3 static column -->
       <div id="col3">
-        <div id="col3_content" class="clearfix"> <a id="content" name="content"></a> <!-- skip anchor: content -->
+        <div id="col3_content" class="floatbox"> <a id="content" name="content"></a> <!-- skip anchor: content -->
             <div id="col3_inside" class="floatbox">
         	    <?php if ($breadcrumb) { ?>
         	        <?php print $breadcrumb ?>

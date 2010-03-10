@@ -1,19 +1,5 @@
 /* ------------------------ Drupal overrides ---------------------- */
 
-ul.primary li.active a, ul.primary li a {
-	background-color: #eee;
-	border-color:#ccc;
-	color: #666;
-	font-weight: bold;
-	font-size: 11px;
-}
-
-ul.primary li.active a {
-	background: #fff;
-	border-color:#ccc;
-	color: #555;
-}
-
 ul.primary li a:hover {
 	background-color:#ffffff;
 }
