@@ -29,7 +29,7 @@ function yaml_theme_preprocess(&$vars, $hook) {
   $vars['theme_cols'] = $match['1'];
 
   $vars['yaml_layout'] = $yaml_layout;
-  $vars['ie_css'] = ' <!--[if lte 5]>
+  $vars['ie_css'] = ' <!--[if lte IE 5]>
   <style type="text/css" media="all">@import "yaml/core/iehacks.css";</style>
   <![endif]-->';
 }
