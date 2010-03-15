@@ -18,6 +18,13 @@ This theme is not build to be used directly, as the more know one like Garland o
  * Subtheme and SubSubTheme CSS files are included in the correct order. Overriding is made easy without "extra specific selectors"
  * the yaml package and the drupal yaml mods are seperated in different dircories (yaml and yaml_drupal). You can therefor upgrade your yaml-framework anytime. No hacks.
  
+---+ Installation
+ * Download the theme and put it under sites/all/theme/yaml_theme
+ * Download the yaml-css framwork package from http://www.yaml.de/en/download.html and put it under yaml_theme/yaml
+  * You must extract it that way, that the yaml_theme/yaml/core folder exists
+  * Check the licence! You can use yaml for free if you put a note in the impressum that you use yaml-css-framework (with a link to the homepage) 
+  
+
 ---+ Documentation
 Most of the documentation you need is on the YAML CSS Framwork homepage ( http://www.yaml.de/en/home.html ). But there are still some things you might need to know about this theme
 
