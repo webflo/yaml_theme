@@ -156,7 +156,6 @@ function _yaml_theme_get_current_op() {
   return $mode;
 }
 
-
 function yaml_theme_yaml_tabs_primary($tasks) {
   if($tasks != "") {
     return "<ul class=\"tabs primary\">\n". $tasks ."</ul>\n";
@@ -172,5 +171,3 @@ function yaml_theme_yaml_tabs_secondary($tasks) {
   //else
   return '';
 }
-
-
