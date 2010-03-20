@@ -22,5 +22,5 @@
 }
 
 #main,#main #col3_content{
-  overflow:visible;
+  overflow:auto;
 }
