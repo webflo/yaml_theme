@@ -47,8 +47,8 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
             			  <?php if ($logo) { ?><a href="<?php print $base_path ?>" title="<?php print $site_name?>"><img id="site-logo" class="_trans" src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a><?php } ?>
             			  <?php if ($site_name && !$logo) { ?><h1 id="site-name"><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
             			  <?php if ($site_slogan) { ?><div id="site-slogan"><?php print $site_slogan ?></div><?php } ?>
-            			  <? if($header_left) { print $header_left; }?>
             			<?php }?>
+            			<? if($header_left) { print $header_left; }?>
           		  </div>
         		</div>
         		<div id="header-right" class="c50r">
