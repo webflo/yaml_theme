@@ -17,6 +17,8 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
 <div class="page_margins page-center <?=$page_width?>" <?=$page_width_exact?> >
   <div class="page">
     <!-- begin: top -->
+    
+    <?php if ($top_right||$top_left): ?>
     <div id="top" class="clearfix">
   	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
   	  <div class="subcolumns">
@@ -34,12 +36,16 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
           </div>
 	   </div>
     </div>
+    <?php endif; ?>
     <!-- end: top -->
     <!-- begin: header -->
-	  <div id="header">
+        <?php if ($header_full||$header_left||$header_right): ?>
+	 <div id="header">
         <div id="header_full">
           <? if($header_full) { print $header_full; }?>
         </div>
+	
+        <?php if ($header_left||$header_right): ?>
         <div id="header-splitted" class="subcolumns" >
         		<div id="header-left" class="c50l">
           		  <div class="subcl">
@@ -47,8 +53,8 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
             			  <?php if ($logo) { ?><a href="<?php print $base_path ?>" title="<?php print $site_name?>"><img id="site-logo" class="_trans" src="<?php print $logo ?>" alt="<?php print t('Home') ?>" /></a><?php } ?>
             			  <?php if ($site_name && !$logo) { ?><h1 id="site-name"><a href="<?php print $base_path ?>" title="<?php print t('Home') ?>"><?php print $site_name ?></a></h1><?php } ?>
             			  <?php if ($site_slogan) { ?><div id="site-slogan"><?php print $site_slogan ?></div><?php } ?>
-            			  <? if($header_left) { print $header_left; }?>
             			<?php }?>
+            			<? if($header_left) { print $header_left; }?>
           		  </div>
         		</div>
         		<div id="header-right" class="c50r">
@@ -57,15 +63,17 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
                   </div>
         		</div>
         </div>
+	<?php endif ?>
     </div>
+	<?php endif ?>
     <!-- end: header -->
     <!-- begin: main navigation #nav -->
-    <div id="nav" class="clearfix">
+    <?php if ($navigation): ?>
+    <div id="nav">
         <a id="navigation" name="navigation"></a> <!-- skip anchor: navigation -->
-        <?php if ($navigation): ?>
           <?php print $navigation ?>
-        <?php endif; ?>
     </div>
+    <?php endif; ?>
     <!-- end: main navigation -->
 
     <!-- begin: main content area #main -->
@@ -81,7 +89,7 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
       <?php if (($theme_cols >= 2) && ($left_top||$left_middle||$left_bottom)): ?>
       <div id="col1">
         <div id="col1_content" class="clearfix">
-          <div id="col1_inside" class="floatbox">
+          <div id="col1_inside">
        	    <?php if ($left_top): ?>
       			  <div class="left_top">
       				  <?php print $left_top ?>
@@ -107,7 +115,7 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
       <!-- begin: #col2 second float column -->
       <div id="col2">
         <div id="col2_content" class="clearfix">
-          <div id="col2_inside" class="floatbox">
+          <div id="col2_inside">
             <?php if ($right_top): ?>
       			  <div class="right_top">
       				  <?php print $right_top ?>
@@ -131,8 +139,8 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
 
       <!-- begin: #col3 static column -->
       <div id="col3">
-        <div id="col3_content" class="floatbox"> <a id="content" name="content"></a> <!-- skip anchor: content -->
-            <div id="col3_inside" class="floatbox">
+        <div id="col3_content" class="clearfix"> <a id="content" name="content"></a> <!-- skip anchor: content -->
+            <div id="col3_inside">
         	    <?php if ($breadcrumb) { ?>
         	        <?php print $breadcrumb ?>
         			<?php } ?>
@@ -141,18 +149,18 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
                   <?php print $content_above_tabs ?>
                 </div>
               <?php endif; ?>
-        			<?php if ( $tabs_primary != '' && $theme_show_local_tasks) : ?>
-        		     <div class="local-task clearfix">
-                  <?php print $tabs_primary?>
-                  <?php print $tabs_secondary?>
-        			  </div>
+        			<?php if ( $tabs_primary != '' && $theme_show_local_tasks == 1) : ?>
+         		     	<div class="local-task">
+		                  <?php print $tabs_primary?>
+                		  <?php print $tabs_secondary?>
+        			</div>
         			<?php endif; ?>
         			<?php if ($content_below_tabs): ?>
-        			  <div id="content_below_tabs" class="clearfix">
-        				  <?php print $content_below_tabs ?>
-        			  </div>
+        			<div id="content_below_tabs" class="clearfix">
+        			  <?php print $content_below_tabs ?>
+        			</div>
               <?php endif; ?>
-        			<div class="content-region <? if(!empty($node)) { print "node-".$node->nid;print " node-type-".$node->type; } ?> op-<?=$current_op?> clearfix">
+        			<div class="content-region <? if(!empty($node)) { print "node-".$node->nid;print " node-type-".$node->type; } ?> op-<?=$current_op?>">
                 <?php print $content_above_maincontent ?>
         			  <?php if ($show_messages && $messages): print $messages; endif; ?>
         			  <?php print $help ?>
@@ -160,7 +168,7 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
         			  <?php print $feed_icons ?>
         			</div>
         			<?php if ($content_bottom): ?>
-        			  <div class="content_bottom clearfix">
+        			  <div class="content_bottom">
         				  <?php print $content_bottom ?>
         			  </div>
               <?php endif; ?>
@@ -174,11 +182,13 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
     <!-- end: #main -->
 
     <!-- begin: #footer -->
-    <div id="footer clearfix">
+    <?php if($footer_left||$footer_right||$footer_full): ?>
+    <div id="footer">
       <div id="footer_full" >
         <? if($footer_full) { print $footer_full; }?>
       </div>
   	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
+	  <?php if($footer_left||$footer_right): ?>
   	  <div class="subcolumns">
     		  <div class="c50l">
     		    <div class="subcl">
@@ -189,15 +199,18 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
   		      <div class="subcr">
       	       <?php print $footer_right ?>
       		  </div>
-  		    </div>
+         </div>
+	 <?php endif; ?>
       </div>
     </div>
+    <?php endif; ?>
     <!-- end: #footer -->
   </div>
+  <?php if($page_bottom_text != ""): ?>
   <div id="page_bottom" <?=$page_width?>" <?=$page_width_exact?>>
-    <?php print $page_bottom; ?>
     <?if($page_bottom_text != "") print $page_bottom_text?>
   </div>
+  <?php endif ?>
   <?php print $closure ?>
 </body>
 </html>

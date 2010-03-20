@@ -43,6 +43,7 @@ function yaml_theme_preprocess_page(&$vars) {
 
   $vars['page_width_exact']  =  theme_get_setting('page_width_exact');
   $vars['theme_show_local_tasks']  =  theme_get_setting('theme_show_local_tasks');
+
   // If page_width_exact is empty, we use the fixed page_with to set the page width, otherwise..
   if($vars['page_width_exact'] == "") {
     $vars['page_width'] = theme_get_setting('page_width');
