@@ -39,13 +39,13 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
     <?php endif; ?>
     <!-- end: top -->
     <!-- begin: header -->
-        <?php if ($header_full||$header_left||$header_right): ?>
+        <?php if ($header_full||$header_left||$header_right||($theme_show_header==1&&($logo||$site_name||$site_slogan))): ?>
 	 <div id="header">
         <div id="header_full">
           <? if($header_full) { print $header_full; }?>
         </div>
 	
-        <?php if ($header_left||$header_right): ?>
+        <?php if ($header_left||$header_right||($theme_show_header==1&&($logo||$site_name||$site_slogan))): ?>
         <div id="header-splitted" class="subcolumns" >
         		<div id="header-left" class="c50l">
           		  <div class="subcl">
