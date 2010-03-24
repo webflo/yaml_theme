@@ -151,7 +151,9 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
               <?php endif; ?>
         			<?php if ( $tabs_primary != '' && $theme_show_local_tasks == 1) : ?>
          		     	<div class="local-task">
+				  <div class="clearfix">
 		                  <?php print $tabs_primary?>
+				  </div>
                 		  <?php print $tabs_secondary?>
         			</div>
         			<?php endif; ?>
