@@ -1,9 +1,0 @@
-/* yaml core */
-@import "yaml/core/base.css";
-@import "yaml/navigation/nav_shinybuttons.css";
-@import "yaml/print/print_draft.css";
-@import "yaml/screen/forms.css";
-
-/* yaml for drupal */
-@import "yaml_drupal/screen/basemod_drupal.css";
-@import "yaml_drupal/screen/content_default.css";

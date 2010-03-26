@@ -4,17 +4,17 @@ description = A Drupal theme based on the  YAML CSS Framework
 
 ; Add theme regions
 regions[top_left] = Topbar Left
-regions[top_right] = Topbar Right 
-regions[header_full] = Header Full 
-regions[header_left] = Header Left 
-regions[header_right] = Header Right 
+regions[top_right] = Topbar Right
+regions[header_full] = Header Full
+regions[header_left] = Header Left
+regions[header_right] = Header Right
 regions[navigation] = Navigation
-regions[left_top] = Sidebar Left Top 
-regions[left_middle] = Sidebar Left Middle 
-regions[left_bottom] = Sidebar Left Bottom 
-regions[right_top] = Sidebar Right Top 
-regions[right_middle] = Sidebar Right Middle 
-regions[right_bottom] = Sidebar Right Bottom 
+regions[left_top] = Sidebar Left Top
+regions[left_middle] = Sidebar Left Middle
+regions[left_bottom] = Sidebar Left Bottom
+regions[right_top] = Sidebar Right Top
+regions[right_middle] = Sidebar Right Middle
+regions[right_bottom] = Sidebar Right Bottom
 regions[content_above_tabs] = Above Tabs
 regions[content_below_tabs] = Below Tabs
 regions[content_above_maincontent] = Above Main Content
@@ -44,7 +44,21 @@ skinr[yaml_theme-rounded][title] = Title
 skinr[yaml_theme-rounded][description] = Description
 skinr[yaml_theme-rounded][options][1][label] = Skin option label
 skinr[yaml_theme-rounded][options][1][class] = skin-option-class
+;yaml
+stylesheets[all][] = css/yaml_theme_style.css
+
+
+;yaml core
+stylesheets[all][] = yaml/core/base.css";
+stylesheets[all][] = yaml/navigation/nav_shinybuttons.css";
+stylesheets[all][] = yaml/print/print_draft.css";
+stylesheets[all][] = yaml/screen/forms.css";
+
+;yaml drupal mods
+stylesheets[all][] = yaml_drupal/screen/basemod_drupal.css";
+stylesheets[all][] = yaml_drupal/screen/content_default.css";
+
 ;elements
-stylesheets[all][] = css/style.css
-stylesheets[all][] = css/drupal.css
-stylesheets[all][] = css/typography.css
+stylesheets[all][] = css/yaml_theme_style.css
+stylesheets[all][] = css/yaml_theme_drupal.css
+stylesheets[all][] = css/yaml_theme_typography.css
