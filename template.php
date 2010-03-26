@@ -62,9 +62,21 @@ function yaml_theme_preprocess_page(&$vars) {
   $custom_yaml = "yaml_drupal";
   $yaml_layout = $vars['yaml_layout'];
 
-  // Little hack to prepend a hash key to the elements (as we can pass keys to array_unshift).
-  $tmp["$theme/yaml.css"] = true;
+  // Little hack to prepend a hash key to the elements (as we cannot pass keys to array_unshift).
+  // TODO: CACHE THIS
+  $yaml_css = array();
+  foreach($vars['css']['all']['theme'] as $path => $bool) {
+	if(strstr($path,'themes/yaml_theme')) {
+		$yaml_css[$path] = true;
+		unset($vars['css']['all']['theme'][$path]);
+	}
+  }
+
+  foreach($yaml_css as $path => $bool) {
+	$tmp[$path] = true;
+  }
   $tmp["$theme/$custom_yaml/screen/basemod_$yaml_layout.css"] = true;
+
   foreach($vars['css']['all']['theme'] as $path => $bool) {
     $tmp[$path] = $bool;
   }
