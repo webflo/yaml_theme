@@ -40,23 +40,15 @@ features[] = search
 features[] = favicon
 features[] = primary_links
 features[] = secondary_links
-skinr[yaml_theme-rounded][title] = Title
-skinr[yaml_theme-rounded][description] = Description
-skinr[yaml_theme-rounded][options][1][label] = Skin option label
-skinr[yaml_theme-rounded][options][1][class] = skin-option-class
-;yaml
-stylesheets[all][] = css/yaml_theme_style.css
-
-
 ;yaml core
-stylesheets[all][] = yaml/core/base.css";
-stylesheets[all][] = yaml/navigation/nav_shinybuttons.css";
-stylesheets[all][] = yaml/print/print_draft.css";
-stylesheets[all][] = yaml/screen/forms.css";
+stylesheets[all][] = yaml/core/base.css
+stylesheets[all][] = yaml/navigation/nav_shinybuttons.css
+stylesheets[all][] = yaml/print/print_draft.css
+stylesheets[all][] = yaml/screen/forms.css
 
 ;yaml drupal mods
-stylesheets[all][] = yaml_drupal/screen/basemod_drupal.css";
-stylesheets[all][] = yaml_drupal/screen/content_default.css";
+stylesheets[all][] = yaml_drupal/screen/basemod_drupal.css
+stylesheets[all][] = yaml_drupal/screen/content_default.css
 
 ;elements
 stylesheets[all][] = css/yaml_theme_style.css
