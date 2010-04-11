@@ -1,3 +1,4 @@
+; $Id$
 Drupal Theme based on the YAML css Framework
 
 ---+ Introduction
@@ -50,15 +51,15 @@ function drupalwiki_yaml_theme_layout($layout, $available) {
   global $theme;
   switch($theme) {
     case 'wikipedia_theme':
-      if(arg(0) == 'searchplus') {
+      if (arg(0) == 'searchplus') {
         return '2col_left_13';
       }
-      if(arg(0) == 'node' and arg(1) == 14) {
+      if (arg(0) == 'node' and arg(1) == 14) {
         return '3col_left_132';
       }
       break;
     default:
-      if(arg(0) == 'searchplus') {
+      if (arg(0) == 'searchplus') {
         return '2col_right_31';
       }
   }

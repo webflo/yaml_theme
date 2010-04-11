@@ -1,4 +1,6 @@
-<?
+<?php
+// $Id$
+
 // dont remove once!
 require_once('theme-settings.php');
 /**
@@ -20,7 +22,7 @@ function yaml_theme_preprocess(&$vars, $hook) {
   // if needed. Of course we could CSS for that, but why heat the client
   // browser even more?
   $override_layout = module_invoke_all('yaml_theme_layout',$yaml_layout, _yaml_theme_layouts());
-  if(is_array($override_layout) && count($override_layout) > 0) {
+  if (is_array($override_layout) && count($override_layout) > 0) {
     // only use the first
     $yaml_layout = $override_layout[0];
   };
@@ -45,7 +47,7 @@ function yaml_theme_preprocess_page(&$vars) {
   $vars['theme_show_local_tasks']  =  theme_get_setting('theme_show_local_tasks');
 
   // If page_width_exact is empty, we use the fixed page_with to set the page width, otherwise..
-  if($vars['page_width_exact'] == "") {
+  if ($vars['page_width_exact'] == "") {
     $vars['page_width'] = theme_get_setting('page_width');
   }
   else { // use the customer one. Could be px, % or em
@@ -66,7 +68,7 @@ function yaml_theme_preprocess_page(&$vars) {
   // TODO: CACHE THIS
   $yaml_css = array();
   foreach($vars['css']['all']['theme'] as $path => $bool) {
-	if(strstr($path,'themes/yaml_theme')) {
+	if (strstr($path,'themes/yaml_theme')) {
 		$yaml_css[$path] = true;
 		unset($vars['css']['all']['theme'][$path]);
 	}
@@ -159,7 +161,7 @@ function _yaml_theme_get_current_op() {
   else if ((arg(0) == 'node' && arg(2) == 'revisions' && arg(3) == 'view')) {
   	 $mode = "compare-revisions";
   }
-  else if( arg(0) == 'user' && arg(2) == 'edit' ){
+  else if ( arg(0) == 'user' && arg(2) == 'edit' ){
     $mode = "edit-user";
   }
   else if (arg(0) == 'node' && arg(1) == 'add' && arg(2) != "") {
@@ -170,7 +172,7 @@ function _yaml_theme_get_current_op() {
 }
 
 function yaml_theme_yaml_tabs_primary($tasks) {
-  if($tasks != "") {
+  if ($tasks != "") {
     return "<ul class=\"tabs primary\">\n". $tasks ."</ul>\n";
   }
   //else
@@ -178,7 +180,7 @@ function yaml_theme_yaml_tabs_primary($tasks) {
 }
 
 function yaml_theme_yaml_tabs_secondary($tasks) {
-  if($tasks != "") {
+  if ($tasks != "") {
     return "<ul class=\"tabs secondary\">\n". $tasks ."</ul>\n";
   }
   //else

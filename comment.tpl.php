@@ -7,17 +7,17 @@
     <a id="new"></a>
     <span class="new"><?php print $new ?></span>
   <?php endif; ?>
-    <?php print $picture ?>
-    <h3><?php print $title ?></h3>
-    <div class="submitted"><?php print $submitted ?></div>
+    <?php print $picture; ?>
+    <h3><?php print $title; ?></h3>
+    <div class="submitted"><?php print $submitted; ?></div>
     <div class="content">
-      <?php print $content ?>
+      <?php print $content; ?>
       <?php if ($signature): ?>
       <div class="user-signature clearfix">
-        <?php print $signature ?>
+        <?php print $signature; ?>
       </div>
       <?php endif; ?>
     </div>
   </div>
-  <?php print $links ?>
+  <?php print $links; ?>
 </div>

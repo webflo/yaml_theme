@@ -28,9 +28,9 @@
     <br />
     <hr class="print-hr" />
     <h1 class="print-title"><?php print $print['title']; ?></h1>
-    <div id="main-content"><?php print $print['node']->content['body']['#value'] ?></div>
+    <div id="main-content"><?php print $print['node']->content['body']['#value']; ?></div>
     <div class="print-footer"><?php print $print['footer_message']; ?></div>
     <hr class="print-hr" />
-    <div class="print-source_url"><?php print $print['source_url']; ?> (gedruckt am <?=date("d.m.Y")?>)</div>
+    <div class="print-source_url"><?php print $print['source_url']; ?> (gedruckt am <?print date("d.m.Y"); ?>)</div>
   </body>
 </html>

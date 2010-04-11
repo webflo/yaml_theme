@@ -1,4 +1,4 @@
-<?
+<?php
 // $Id: theme-settings.php,v 1.1.2.4 2009/12/02 00:47:46 sociotech Exp $
 
 /**
