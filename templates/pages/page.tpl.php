@@ -14,10 +14,10 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
 <body class="<?php print $body_classes; ?>">
 <?php if (isset($fontsize_init)) { print $fontsize_init; } ?>
 
-<div class="page_margins page-center <?=$page_width?>" <?=$page_width_exact?> >
+<div class="page_margins page-center <?php print $page_width?>" <?php print $page_width_exact?> >
   <div class="page">
     <!-- begin: top -->
-    
+
     <?php if ($top_right||$top_left): ?>
     <div id="top" class="clearfix">
   	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
@@ -44,7 +44,7 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
         <div id="header_full">
           <? if($header_full) { print $header_full; }?>
         </div>
-	
+
         <?php if ($header_left||$header_right||($theme_show_header==1&&($logo||$site_name||$site_slogan))): ?>
         <div id="header-splitted" class="subcolumns" >
         		<div id="header-left" class="c50l">
@@ -207,7 +207,7 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
     <!-- end: #footer -->
   </div>
   <?php if($page_bottom_text != ""): ?>
-  <div id="page_bottom" <?=$page_width?>" <?=$page_width_exact?>>
+  <div id="page_bottom" <?php print $page_width?>" <?php print $page_width_exact?>>
     <?if($page_bottom_text != "") print $page_bottom_text?>
   </div>
   <?php endif ?>
