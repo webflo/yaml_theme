@@ -14,7 +14,7 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
 <body class="<?php print $body_classes; ?>">
 <?php if (isset($fontsize_init)) { print $fontsize_init; } ?>
 
-<div class="page_margins page-center <?php print $page_width?>" <?php print $page_width_exact?> >
+<div class="page_margins page-center <?php print $page_width; ?>" <?php print $page_width_exact; ?>>
   <div class="page">
     <!-- begin: top -->
 
@@ -160,7 +160,7 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
         			  <?php print $content_below_tabs ?>
         			</div>
               <?php endif; ?>
-        			<div class="content-region <? if(!empty($node)) { print "node-".$node->nid;print " node-type-".$node->type; } ?> op-<?=$current_op?>">
+        			<div class="content-region <? if(!empty($node)) { print "node-".$node->nid;print " node-type-".$node->type; } ?> op-<?php print $current_op; ?>">
                 <?php print $content_above_maincontent ?>
         			  <?php if ($show_messages && $messages): print $messages; endif; ?>
         			  <?php print $help ?>
@@ -207,7 +207,7 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
     <!-- end: #footer -->
   </div>
   <?php if($page_bottom_text != ""): ?>
-  <div id="page_bottom" <?php print $page_width?>" <?php print $page_width_exact?>>
+  <div id="page_bottom" <?php print $page_width; ?>" <?php print $page_width_exact; ?>>
     <?if($page_bottom_text != "") print $page_bottom_text?>
   </div>
   <?php endif ?>

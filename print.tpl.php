@@ -16,8 +16,8 @@
     <?php print $print['base_href']; ?>
     <?php print $print['favicon']; ?>
     <?php print $print['css']; ?>
-    <link type="text/css" rel="stylesheet" media="all" href="<?="/".path_to_theme()."/css/typography.css"?>" />
-    <link type="text/css" rel="stylesheet" media="all" href="<?="/".path_to_theme()."/print.css"?>" />    
+    <link type="text/css" rel="stylesheet" media="all" href="<?php print "/".path_to_theme()."/css/typography.css"; ?>" />
+    <link type="text/css" rel="stylesheet" media="all" href="<?php print "/".path_to_theme()."/print.css"; ?>" />
   </head>
   <body<?php print $print['sendtoprinter']; ?>>
     <?php if (!empty($print['message'])) {
