@@ -188,31 +188,36 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
         <?php if ($footer_full) { print $footer_full; }?>
       </div>
   	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
-	  <?php if ($footer_left||$footer_right): ?>
+	    <?php if ($footer_left||$footer_right): ?>
   	  <div class="subcolumns">
-    		  <div class="c50l">
-    		    <div class="subcl">
-      	       <?php print $footer_left; ?>
-      		  </div>
-    		  </div>
-  		    <div class="c50r">
-  		      <div class="subcr">
-      	       <?php print $footer_right; ?>
-      		  </div>
-         </div>
-	 <?php endif; ?>
-      </div>
+        <div class="c50l">
+    		  <div class="subcl">
+            <?php print $footer_left; ?>
+          </div>
+    		</div>
+  		  <div class="c50r">
+  		    <div class="subcr">
+            <?php print $footer_right; ?>
+      		</div>
+        </div>
+      </div><!-- end: .subcolumns -->
+	    <?php endif; ?>
     </div>
     <?php endif; ?>
     <!-- end: #footer -->
-  </div>
+    
+  </div><!-- end: .page -->
+  
   <?php if ($page_bottom_text != ""): ?>
     <div id="page_bottom" <?php print $page_width; ?>" <?php print $page_width_exact; ?>>
-    <?if ($page_bottom_text != ""): ?>
-      <?php print $page_bottom_text; ?>
-    <?php endif; ?>
-  </div>
+      <?if ($page_bottom_text != ""): ?>
+        <?php print $page_bottom_text; ?>
+      <?php endif; ?>
+    </div>
   <?php endif; ?>
+  
+  </div><!-- end: .page_margins -->
+  
   <?php print $closure; ?>
 </body>
 </html>
