@@ -16,15 +16,15 @@
     <?php print $print['base_href']; ?>
     <?php print $print['favicon']; ?>
     <?php print $print['css']; ?>
-    <link type="text/css" rel="stylesheet" media="all" href="<?php print '/' . path_to_theme() . '/css/typography.css'; ?>" />
-    <link type="text/css" rel="stylesheet" media="all" href="<?php print '/' . path_to_theme() . '/print.css'; ?>" />
+    <link type="text/css" rel="stylesheet" media="all" href="<?php print "/".path_to_theme()."/css/typography.css"; ?>" />
+    <link type="text/css" rel="stylesheet" media="all" href="<?php print "/".path_to_theme()."/print.css"; ?>" />
   </head>
   <body<?php print $print['sendtoprinter']; ?>>
     <?php if (!empty($print['message'])) {
       print '<div class="print-message">'. $print['message'] .'</div><br />';
     } ?>
     <div class="print-logo"><?php print $print['logo']; ?></div>
-    <div id="clear"></div>
+    <div id="clear"></div>    
     <br />
     <hr class="print-hr" />
     <h1 class="print-title"><?php print $print['title']; ?></h1>

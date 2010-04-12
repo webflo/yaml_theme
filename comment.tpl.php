@@ -1,7 +1,7 @@
 <?php
 // $Id: comment.tpl.php,v 3.1.0.12 2009/06/07 00:00:00 hass Exp $
 ?>
-<div class="comment<?php if ($comment->new) { print ' comment-new'; } if ($comment->status == COMMENT_NOT_PUBLISHED) { print ' comment-unpublished'; } ?>">
+<div class="comment<?php print ($comment->new) ? ' comment-new' : ''; print ($comment->status == COMMENT_NOT_PUBLISHED) ? ' comment-unpublished' : ''; ?>">
   <div class="clearfix">
   <?php if ($comment->new) : ?>
     <a id="new"></a>

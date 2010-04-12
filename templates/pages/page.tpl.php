@@ -1,5 +1,5 @@
 <?php
-// $Id$
+// $Id:$
 if (!empty($xml_prolog)) { print $xml_prolog; }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -12,34 +12,26 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
 </head>
 
 <body class="<?php print $body_classes; ?>">
-<?php
-  if (isset($fontsize_init)) {
-    print $fontsize_init;
-  }
-?>
+<?php if (isset($fontsize_init)) { print $fontsize_init; } ?>
 
 <div class="page_margins page-center <?php print $page_width; ?>" <?php print $page_width_exact; ?>>
   <div class="page">
     <!-- begin: top -->
 
-    <?php if ($top_right || $top_left): ?>
+    <?php if ($top_right||$top_left): ?>
     <div id="top" class="clearfix">
   	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
   	  <div class="subcolumns">
       		<div id="top-left" class="c50l">
       		  <div class="subcl">
-      			  <?php if ($top_left) {
-                  print $top_left;
-                } ?>
+      			  <?php if ($top_left) { print $top_left; } ?>
       		  </div>
       		</div>
 
           <div id="top-right" class="c50r">
             <div class="subcr">
           	<!-- Inhalt rechter Block -->
-          	<?php if ($top_right || 1) {
-              print $top_right;
-            } ?>
+          	<?php if ($top_right || 1) { print $top_right; } ?>
             </div>
           </div>
 	   </div>
@@ -47,40 +39,28 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
     <?php endif; ?>
     <!-- end: top -->
     <!-- begin: header -->
-        <?php if ($header_full || $header_left || $header_right || ($theme_show_header == 1 && ($logo || $site_name || $site_slogan))): ?>
+        <?php if ($header_full||$header_left||$header_right||($theme_show_header==1&&($logo||$site_name||$site_slogan))): ?>
 	 <div id="header">
         <div id="header_full">
-          <?php if ($header_full); ?>
-            <?php print $header_full; ?>
-          <?php endif; ?>
+          <?php if ($header_full) { print $header_full; } ?>
         </div>
 
-        <?php if ($header_left || $header_right || ($theme_show_header == 1 && ($logo || $site_name || $site_slogan))): ?>
+        <?php if ($header_left||$header_right||($theme_show_header==1&&($logo||$site_name||$site_slogan))): ?>
         <div id="header-splitted" class="subcolumns" >
         		<div id="header-left" class="c50l">
           		  <div class="subcl">
-          		    <?php if ($theme_show_header == 1): ?>
-              			<?php if ($logo): ?>
-                      <a href="<?php print $base_path; ?>" title="<?php print $site_name; ?>"><img id="site-logo" class="_trans" src="<?php print $logo; ?>" alt="<?php print t('Home') ?>" /></a>
-                    <?php endif; ?>
-              			<?php if ($site_name && !$logo): ?>
-                      <h1 id="site-name"><a href="<?php print $base_path; ?>" title="<?php print t('Home') ?>"><?php print $site_name; ?></a></h1>
-                    <?php endif; ?>
-              			<?php if ($site_slogan): ?>
-                      <div id="site-slogan"><?php print $site_slogan; ?></div>
-                    <?php endif; ?>
-            			<?php endif; ?>
-            			<?php if ($header_left): ?>
-                    <?php print $header_left; ?>
-                  <?php endif; ?>
+          		    <?php if ($theme_show_header == 1) {?>
+            			  <?php if ($logo) { ?><a href="<?php print $base_path; ?>" title="<?php print $site_name; ?>"><img id="site-logo" class="_trans" src="<?php print $logo; ?>" alt="<?php print t('Home') ?>" /></a><?php } ?>
+            			  <?php if ($site_name && !$logo) { ?><h1 id="site-name"><a href="<?php print $base_path; ?>" title="<?php print t('Home') ?>"><?php print $site_name; ?></a></h1><?php } ?>
+            			  <?php if ($site_slogan) { ?><div id="site-slogan"><?php print $site_slogan; ?></div><?php } ?>
+            			<?php }?>
+            			<?php if ($header_left) { print $header_left; }?>
           		  </div>
         		</div>
         		<div id="header-right" class="c50r">
-              <div class="subcr">
-                <?php if ($header_right): ?>
-                  <?php print $header_right; ?>
-                <?php endif; ?>
-              </div>
+                  <div class="subcr">
+                     <?php if ($header_right) { print $header_right; }?>
+                  </div>
         		</div>
         </div>
 	<?php endif ?>
@@ -180,7 +160,7 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
         			  <?php print $content_below_tabs; ?>
         			</div>
               <?php endif; ?>
-        			<div class="content-region <?php if (!empty($node)) { print "node-" . $node->nid; print " node-type-" . $node->type; } ?> op-<?php print $current_op; ?>">
+        			<div class="content-region <?php if (!empty($node)) { print "node-".$node->nid; print " node-type-".$node->type; } ?> op-<?php print $current_op; ?>">
                 <?php print $content_above_maincontent; ?>
         			  <?php if ($show_messages && $messages): print $messages; endif; ?>
         			  <?php print $help; ?>
@@ -202,12 +182,10 @@ if (!empty($xml_prolog)) { print $xml_prolog; }
     <!-- end: #main -->
 
     <!-- begin: #footer -->
-    <?php if ($footer_left || $footer_right || $footer_full): ?>
+    <?php if ($footer_left||$footer_right||$footer_full): ?>
     <div id="footer">
       <div id="footer_full" >
-        <?php if ($footer_full): ?>
-          <?php print $footer_full; ?>
-        <?php endif; ?>
+        <?php if ($footer_full) { print $footer_full; }?>
       </div>
   	  <!-- Subtemplate: 2 Spalten mit 50/50 Teilung -->
 	  <?php if ($footer_left||$footer_right): ?>
