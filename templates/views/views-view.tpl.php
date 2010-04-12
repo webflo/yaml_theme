@@ -2,7 +2,7 @@
 // $Id: views-view.tpl.php,v 1.1 2008/10/01 03:26:19 jwolf Exp $
 
 /**
- * @file views-view.tpl.php
+ * @file
  * Main view template
  *
  * Variables available:
@@ -83,4 +83,4 @@
     </div>
   <?php endif; ?>
 
-</div> <?php // class view ?>
+</div>

@@ -21,13 +21,13 @@ function yaml_theme_preprocess(&$vars, $hook) {
   // We use it to determine the column count and hide the third column
   // if needed. Of course we could CSS for that, but why heat the client
   // browser even more?
-  $override_layout = module_invoke_all('yaml_theme_layout',$yaml_layout, _yaml_theme_layouts());
+  $override_layout = module_invoke_all('yaml_theme_layout', $yaml_layout, _yaml_theme_layouts());
   if (is_array($override_layout) && count($override_layout) > 0) {
     // only use the first
     $yaml_layout = $override_layout[0];
   };
 
-  preg_match('/^(\d)col_.*/',$yaml_layout, $match);
+  preg_match('/^(\d)col_.*/', $yaml_layout, $match);
   $vars['theme_cols'] = $match['1'];
 
   $vars['yaml_layout'] = $yaml_layout;
@@ -51,7 +51,7 @@ function yaml_theme_preprocess_page(&$vars) {
     $vars['page_width'] = theme_get_setting('page_width');
   }
   else { // use the customer one. Could be px, % or em
-   	$vars['page_width_exact']  =  ' style="width:'.$vars['page_width_exact'].'"';
+    $vars['page_width_exact'] = ' style="width:' . $vars['page_width_exact'] . '"';
   }
 
   $vars['theme_show_header'] = theme_get_setting('theme_yaml_show_header');
@@ -60,26 +60,26 @@ function yaml_theme_preprocess_page(&$vars) {
   $vars['current_op'] = _yaml_theme_get_current_op();
 
   // Now we add the basemod for the current layout
-  $theme = drupal_get_path('theme','yaml_theme');
+  $theme = drupal_get_path('theme', 'yaml_theme');
   $custom_yaml = "yaml_drupal";
   $yaml_layout = $vars['yaml_layout'];
 
   // Little hack to prepend a hash key to the elements (as we cannot pass keys to array_unshift).
   // TODO: CACHE THIS
   $yaml_css = array();
-  foreach($vars['css']['all']['theme'] as $path => $bool) {
-	if (strstr($path,'themes/yaml_theme')) {
-		$yaml_css[$path] = true;
-		unset($vars['css']['all']['theme'][$path]);
-	}
+  foreach ($vars['css']['all']['theme'] as $path => $bool) {
+    if (strstr($path, 'themes/yaml_theme')) {
+      $yaml_css[$path] = TRUE;
+      unset($vars['css']['all']['theme'][$path]);
+    }
   }
 
-  foreach($yaml_css as $path => $bool) {
-	$tmp[$path] = true;
+  foreach ($yaml_css as $path => $bool) {
+    $tmp[$path] = TRUE;
   }
-  $tmp["$theme/$custom_yaml/screen/basemod_$yaml_layout.css"] = true;
+  $tmp["$theme/$custom_yaml/screen/basemod_$yaml_layout.css"] = TRUE;
 
-  foreach($vars['css']['all']['theme'] as $path => $bool) {
+  foreach ($vars['css']['all']['theme'] as $path => $bool) {
     $tmp[$path] = $bool;
   }
   $vars['css']['all']['theme'] = $tmp;
@@ -89,19 +89,19 @@ function yaml_theme_preprocess_page(&$vars) {
   // print it into the page.tpl
   $vars['styles'] = drupal_get_css($vars['css']);
 
-  $vars['tabs_primary'] = theme('yaml_tabs_primary',menu_primary_local_tasks());
-  $vars['tabs_secondary'] = theme('yaml_tabs_secondary',menu_secondary_local_tasks());
+  $vars['tabs_primary'] = theme('yaml_tabs_primary', menu_primary_local_tasks());
+  $vars['tabs_secondary'] = theme('yaml_tabs_secondary', menu_secondary_local_tasks());
 }
 
 /**
  * Node preprocessing
  */
-function yaml_theme_preprocess_node(&$vars,$hook) {
-  $variables['template_files'][] = 'node-'. $vars['nid'];
-  $variables['template_files'][] = 'node-'. $vars['type'];
-  $variables['template_files'][] = 'node-'. $vars['type'].'-'.$vars['nid'];
+function yaml_theme_preprocess_node(&$vars, $hook) {
+  $variables['template_files'][] = 'node-' . $vars['nid'];
+  $variables['template_files'][] = 'node-' . $vars['type'];
+  $variables['template_files'][] = 'node-' . $vars['type'] . '-'. $vars['nid'];
 
-  $function = 'yaml_theme_preprocess_node'.'_'.$vars['type'];
+  $function = 'yaml_theme_preprocess_node' . '_' . $vars['type'];
   if (function_exists($function)) {
     $function($vars, $hook);
   }
@@ -150,21 +150,21 @@ function yaml_theme_preprocess_comment(&$vars) {
  * Add view type class (e.g., node, teaser, list, table)
  */
 function yaml_theme_preprocess_views_view(&$vars) {
-  $vars['css_name'] = $vars['css_name'] .' view-style-'. views_css_safe(strtolower($vars['view']->type));
+  $vars['css_name'] = $vars['css_name'] .' view-style-'. views_css_safe(drupal_strtolower($vars['view']->type));
 }
 
 function _yaml_theme_get_current_op() {
   $mode = "view";
-  if ((arg(0) == 'node' && arg(2) == 'edit')) {
+  if (arg(0) == 'node' && arg(2) == 'edit') {
     $mode = "edit-node";
   }
-  else if ((arg(0) == 'node' && arg(2) == 'revisions' && arg(3) == 'view')) {
-  	 $mode = "compare-revisions";
+  elseif (arg(0) == 'node' && arg(2) == 'revisions' && arg(3) == 'view') {
+    $mode = "compare-revisions";
   }
-  else if ( arg(0) == 'user' && arg(2) == 'edit' ){
+  elseif (arg(0) == 'user' && arg(2) == 'edit' ) {
     $mode = "edit-user";
   }
-  else if (arg(0) == 'node' && arg(1) == 'add' && arg(2) != "") {
+  elseif (arg(0) == 'node' && arg(1) == 'add' && arg(2) != "") {
     $mode = "add-mode";
   }
 
@@ -173,7 +173,7 @@ function _yaml_theme_get_current_op() {
 
 function yaml_theme_yaml_tabs_primary($tasks) {
   if ($tasks != "") {
-    return "<ul class=\"tabs primary\">\n". $tasks ."</ul>\n";
+    return '<ul class="tabs primary">' . $tasks . '</ul>';
   }
   //else
   return '';
@@ -181,7 +181,7 @@ function yaml_theme_yaml_tabs_primary($tasks) {
 
 function yaml_theme_yaml_tabs_secondary($tasks) {
   if ($tasks != "") {
-    return "<ul class=\"tabs secondary\">\n". $tasks ."</ul>\n";
+    return '<ul class="tabs secondary">' . $tasks . '</ul>';
   }
   //else
   return '';

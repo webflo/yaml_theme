@@ -34,13 +34,13 @@ function yaml_theme_default_theme_settings() {
 }
 
 /**
-* Implementation of THEMEHOOK_settings() function.
-*
-* @param $saved_settings
-*   array An array of saved settings for this theme.
-* @return
-*   array A form array.
-*/
+ * Implementation of THEMEHOOK_settings() function.
+ *
+ * @param $saved_settings
+ *   array An array of saved settings for this theme.
+ * @return
+ *   array A form array.
+ */
 function phptemplate_settings($saved_settings) {
   global $base_url;
 
@@ -124,7 +124,7 @@ function _yaml_theme_settings_form($settings) {
     '#title'       => t('Font family'),
     '#collapsible' => TRUE,
     '#collapsed'   => TRUE,
-   );
+  );
   $form['tnt_container']['general_settings']['theme_font_config']['theme_font_config_font']['theme_font'] = array(
     '#type'          => 'radios',
     '#title'         => t('Select a new font family'),
@@ -185,7 +185,7 @@ function _yaml_theme_settings_form($settings) {
     '#type' => 'fieldset',
     '#title' => t('Page size'),
     '#collapsible' => TRUE,
-    '#collapsed' => true,
+    '#collapsed' => TRUE,
   );
 
   $form['tnt_container']['general_settings']['theme_yaml_config']['page_size']['page_width'] = array(
